@@ -1,0 +1,12 @@
+.bandInput{
+	display: float;
+	border: 1px solid blue;
+	height:100px;
+	width:400px;
+}
+.dateInput{width: 40px;}
+
+.inputLine{
+	float:left;
+	clear:left;
+}
