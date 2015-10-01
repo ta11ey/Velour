@@ -3,7 +3,7 @@ angular.module('velourApp').controller('mainCtrl',function($scope, mainService){
 	$scope.todaysDate = mainService.getDate()
 	$scope.showSorter = mainService.showSorter;
 	$scope.getShows = mainService.getShows;
-	var unsortedShowsFromAF = [];
+	var unsortedShowsFromAF = [];// check about altering global functions!!!!!!!
 
 	$scope.daysWithShows = function(){
 		var showDays = [];

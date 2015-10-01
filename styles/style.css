@@ -1,5 +1,6 @@
 div{
-	color:white;
+	color:lightgray;
+	font-family: 'Muli';
 }
 
 body{
@@ -30,7 +31,7 @@ ul{
 	display:flex;
 	width:100%;
 	color:#bdae85;
-	font-family: 'Abril Fatface';
+	font-family: 'Playfair Display', serif;
 	font-size: 20px;
 
 }
@@ -42,49 +43,123 @@ li{
 
 /*------------content------------*/
 
+.todaysDate{
+	text-align: center;
+	color: lightgray;
+	margin-bottom:10px;
+	margin-top: 10px;
+	font-size: 15
+}
+
+.todaysDate >div {
+	font-size: 20px;
+}
+
 .content{
 	display:float;
-	width:90%;
+	width:100%;
 	margin:0 auto;
 	height:100vh;
+	float:left;
 
 }
 
 .shows{
-	width: 100%;
+	width: 90%;
+	margin-left:5%;
 
 }
 
 .upcomingShows{
 	width:25%;
 	height:100vh;
-	/*background: #333333;*/
 	float:left;
-	/*padding:10px;*/
-
 }
 .bandPic{
+	width: 100px;
+	margin:5px;
 	flex:1;
 }
 .eachShowInfo{
+	font-size: 20px;
 	flex:2;
 }
 
 .eachShow {
 	box-sizing: border-box;
 	width: 100%;
-	/*border: 1px solid white;*/
-	border-radius: 8px;
+	margin: 20px 0;
 	display:flex;
-	padding:10px;
-	height:130px;
-	margin-top: 10px;
-	background: #333333
+	border-bottom: 1px solid;
+	padding-bottom: 10px;
 
+}
+
+
+button > a {
+	font-size: 10px;
+	margin:0;
+	padding:0;
+
+}
+button{
+		background-color: rgba(188, 24,21, .3);
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-radius: 5px;
+		width:80px;
+		height:20%;
+		margin-top:15%;
 }
 .mainInfo{
 	float:left;
 	width:75%;
-		background: lightgray;
+	/*height: 100vh;*/
+}
 
+/*----------------HOME--------------------------------*/
+.homeTitle{
+	display:float;
+	border: 1px solid tan;
+	height: 325px;
+	margin: 20px;
+}
+
+.homeTitle > div{
+	font-family: 'Playfair Display', serif;
+	font-size:90px;
+	float:left;
+}
+
+.liveMusic, .venue{
+	clear:left;
+	margin-top: -30px;;
+}
+
+.provobest, .liveMusic, .venue {
+	margin-left: 30px;
+}
+
+.homeInfo{
+	display:flex;
+	padding:20px;
+}
+.homeInfo >div{
+	flex:1;
+	text-align: center;
+	padding:20px;
+}
+
+.contactIcon{
+	text-align: center;
+	position:fixed;
+	background:green;
+	right:0;
+	width:30px;
+	top:10%;
+}
+
+.fa {
+	margin:20px 0;
 }
