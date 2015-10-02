@@ -36,8 +36,7 @@ angular.module('velourApp').service('mainService', function($http, $firebaseArra
 			{date: 31, shows: []},
 		];
 
-	var url = 'https://velourshows.firebaseio.com';
-	var addedShows = $firebaseArray(new Firebase(url + '/shows'));
+	
 
 	// this.showOrderer = function(){
 	// 	for(var i=0; i <Shows.length; i++){
@@ -88,10 +87,7 @@ angular.module('velourApp').service('mainService', function($http, $firebaseArra
 			return todaysDate;
 		}
 
-	this.addShow = function(Photo, Artist, Day, Month, Year, Time){
-				addedShows.$add({photo: Photo, artist: Artist, day: Number(Day), month: Number(Month), year:Number(Year), time:Time})
-					.then(function(){alert("sucessfully added " + Artist)});
-		}
+	
 		
 
 	this.getShows = function(){

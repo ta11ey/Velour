@@ -8,42 +8,47 @@
 	<link rel = "stylesheet" href = "../../styles/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../../styles/adminStyle.css"> 
 
- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 </head>
 <body ng-controller='adminCtrl'>
  
-
+{{test}}
 	<div class="bandInput" >
 
 		<div class='inputLine'>
-			artist:<input ng-model="artistInput" placeholder='artist'></input>
+			artist:<input ng-model="artist" placeholder='artist'></input>
 		</div>
 
 		<div class='inputLine'>
 			date of show:
-				<input class ='dateInput' ng-model="monthInput" placeholder='mm'></input>/
-				<input  class ='dateInput' ng-model="dayInput" placeholder='dd'></input>/
+				<input class ='dateInput' ng-model="month" placeholder='mm'></input>/
+				<input  class ='dateInput' ng-model="day" placeholder='dd'></input>/
 
-				<input  class ='dateInput' ng-model="yearInput" placeholder='yyyy'></input>
+				<input  class ='dateInput' ng-model="year" placeholder='yyyy'></input>
 		</div>
 
-		<div class='inputLine'>
-			photo: <input ng-model="albumArtInput" placeholder='album'></input>
+		<div class='inputLine time'>
+			show time:<input ng-model="hour" placeholder='hr'></input>:
+						<input ng-model="minute" placeholder='mn'></input>
 		</div>
-
-		<div class='inputLine'>
-			show time:<input ng-model="timeInput" placeholder='time'></input>
+		
+		<div class='inputLine description'>
+			<textarea ng-model='description' placeholder='description(optional)'></textarea>
+		</div>
+		<div class="inputLine price" >
+		price:<input ng-model='price'></input>
 		</div>
 		
 	</div>
 	</br>
-	<button ng-click ='addShow(albumArtInput, artistInput, dayInput, monthInput, yearInput,timeInput)'>Submit</button>
+	<button ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
 
   <script src="../app.js"></script>
   <script src="../controllers/adminCtrl.js"></script>
+    <script src="../services/adminService.js"></script>
   <script src="../services/mainService.js"></script>
 
 

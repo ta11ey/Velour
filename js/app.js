@@ -26,10 +26,5 @@ app.config(function($routeProvider){
 			templateUrl: 'js/templates/storeTmp.html',
 			controller: 'storeCtrl'
 		})
-		.when('/admin', {
-			templateUrl: 'js/templates/adminTmp.html',
-			controller: 'adminCtrl'
-		})
-
 		.otherwise('/home')
 })

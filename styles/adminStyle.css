@@ -1,12 +1,26 @@
 .bandInput{
 	display: float;
-	border: 1px solid blue;
-	height:100px;
 	width:400px;
 }
 .dateInput{width: 40px;}
 
+
 .inputLine{
 	float:left;
 	clear:left;
+}
+.time >input {
+	width: 30px;
+}
+
+button{
+	float:left;
+	clear:both;
+}
+
+.description{
+
+}
+.price{
+	clear: both;
 }
