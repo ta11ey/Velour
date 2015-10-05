@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app ='velourApp'>
+<head>
+	<title></title>
+	<link rel = "stylesheet" href = "styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+  <div class="basicContact">
+    <span>Velour Live Music</span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(801)818-Band</span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;135 N University Ave, Provo, UT 84601</span></div>
+  <header>
+    <div class="logo">
+      <img src="media/velourHeader.png">
+    </div>
+    <nav>
+      <ul>
+        <li class="home" ><a href='#/home'>HOME</a></li>
+        <li class="shows"><a href='#/shows'>SHOWS</a></li>
+        <li class="about"><a href='#/about'>ABOUT</a></li>
+        <li class="press"><a href='#/press'>PRESS</a></li>
+        <li class="store"><a href='#/store'>STORE</a></li>
+     </ul>
+
+    </nav>
+  </header>
+  <div class="content" ng-controller='mainCtrl'>
+    <div class="upcomingShows">
+        <div class="todaysDate"><div>CONCERT FEED:</div>{{todaysDate}}</div>
+        <div class="shows" ng-repeat = 'sidebarShows in Shows'>
+        <div class="eachShow">
+            <div class="bandPic">{{sidebarShows.shows[0].photo}}</div>
+            <div class="eachShowInfo">
+              <div class="artist">{{sidebarShows.shows[0].artist.toUpperCase()}}</div>
+              <div class="dateOfShow">{{sidebarShows.shows[0].month}}/{{sidebarShows.shows[0].dayOfShow}}/{{sidebarShows.shows[0].year}}</div>
+              <div class="timeOfShow">{{sidebarShows.shows[0].timeOfShow}}</div>
+           </div>
+           <button><a href="">Get Tickets</a></button>
+            <!--<button><a href="">More Info</a></button>-->
+        </div>
+
+
+
+       </div>
+
+    
+    </div>
+    <div class="mainInfo">
+      <ng-view></ng-view>
+    </div>
+
+  </div>
+  <div class="contactIcon">
+	<div><a href="#"><i class="fa fa-instagram"></i></a></div>
+	<div><a href="#"><i class="fa fa-facebook"></i></a></div>
+	<div><a href="#"><i class="fa fa-twitter"></i></a></div>
+</div>
+
+  <footer >
+    <a href='./js/templates/adminTmp.html'>admin</a>
+  </footer> 
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers/homeCtrl.js"></script>
+  <script src="js/controllers/mainCtrl.js"></script>
+  <script src="js/services/mainService.js"></script>
+
+
+
+  
+</body>
+</html>
