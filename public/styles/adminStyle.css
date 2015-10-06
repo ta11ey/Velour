@@ -8,6 +8,7 @@
 .inputLine{
 	float:left;
 	clear:left;
+	margin:5px;
 }
 .time >input {
 	width: 30px;

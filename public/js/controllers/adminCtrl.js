@@ -1,6 +1,7 @@
 angular.module('velourApp').controller('adminCtrl',function($scope, adminService){
 		
-
+		$scope.showUpdate = false;
+		
 		$scope.addShow = function(artist, day, month, year, hour, minute, description, price) {
 				var data = {
 						"artist": 	artist,
@@ -23,30 +24,20 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			};
 
 		$scope.findShow = function(){
-			adminService.findShow()
-				.then(function(response){
-					var showsData = response.data;
-					var shows = [];
-					for (var show in showsData) {
-						var showsObj = {
-							artist: showsData[show].artist,
-							date: {
-									day:showsData[show].date.day,
-									month:showsData[show].date.month,
-									year:showsData[show].date.year
-									
-								},
-							time:{
-									hour:showsData[show].time.hour,
-									minute:showsData[show].time.minute
-								},
-							description:showsData[show].description,
-							price:showsData[show].ticketPrice									
-						}
-						shows.push(showsObj)
-					}
-					$scope.shows=shows;
-				})
+				adminService.findShow().then(function(response){
+					$scope.shows = response
+				})		
+			};
 			
+		$scope.deleteShow = function(id){
+			adminService.deleteShow(id)
 		}
+		
+		$scope.updateShow = function(id, data){
+			adminService.updateShow(id, data)
+
+
+		}
+		
+		
 })

@@ -34,6 +34,12 @@ body {
   margin: 0;
 }
 
+input {
+  border:none;
+  border-bottom: 1px solid black;
+  box-sizing:border-box;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 

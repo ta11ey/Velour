@@ -7,24 +7,24 @@ app.config(function($routeProvider){
 			controller: 'homeCtrl',
 		})
 		.when('/shows', {
-			templateUrl: 'js/templates/showsTmp.html',
-			controller: 'showsCtrl'
+			templateUrl: 'js/templates/calendarTmp.html',
+			controller: 'calendarCtrl'
 		})
 		.when('/about', {
 			templateUrl: 'js/templates/aboutTmp.html',
-			controller: 'aboutCtrl'
+			//controller: 'aboutCtrl'
 		})
 		.when('/contact', {
 			templateUrl: 'js/templates/contactTmp.html',
-			controller: 'contactCtrl'
+			///controller: 'contactCtrl'
 		})
 		.when('/press', {
 			templateUrl: 'js/templates/pressTmp.html',
-			controller: 'pressCtrl'
+			//controller: 'pressCtrl'
 		})
 		.when('/store', {
 			templateUrl: 'js/templates/storeTmp.html',
-			controller: 'storeCtrl'
+			//controller: 'storeCtrl'
 		})
 		.otherwise('/home')
 })

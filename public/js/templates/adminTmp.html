@@ -50,7 +50,34 @@
 			search for artist<input ng-model='search'>{{search}}</input>
 			<button ng-click='findShow(search)'>Find</button>
 		</div>
-		<div class="searchedShows" ng-repeat = 'show in shows'>{{show.artist}}</div>
+		<div class="searchedShows" ng-repeat = 'show in shows'>
+			{{show.artist}}
+			<button ng-click='showUpdate = true'>update</button>
+			<button ng-click='deleteShow(show.id)'>delete</button>
+			<div class="updateShow" ng-show ='showUpdate'>
+				<div class="updatedArtistInput">
+					artist: 		<input ng-model = 'updatedArtist.artist' placeholder = '{{show.artist}}'></input>
+				</div>
+				<div class="updatedDateInput">
+					date: 			<input ng-model = 'updatedArtist.date.month' placeholder = '{{show.date.month}}'></input>
+									/<input ng-model = 'updatedArtist.date.day' placeholder = '{{show.date.day}}'></input>
+									/<input ng-model = 'updatedArtist.date.year' placeholder = '{{show.date.year}}'></input>
+				</div>
+				<div class="updatedTimeInput">
+					time: 			<input ng-model = 'updatedArtist.time.hour' placeholder = '{{show.time.hour}}'></input>
+									:<input ng-model = 'updatedArtist.time.minute' placeholder = '{{show.time.minute}}'></input>
+				</div>
+				<div class="updatedDesInput">
+					description: 	<input ng-model = 'updatedArtist.description' placeholder = '{{show.description}}'></input>
+				</div>
+				<div class="updatedPriceInput">
+					price: 			<input ng-model = 'updatedArtist.ticketPrice' placeholder="{{show.price}}"></input>
+				</div>
+				<button ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>done</button>
+				
+			</div>
+			</div>
+			
 			
 			
 		</div>

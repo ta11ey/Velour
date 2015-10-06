@@ -38,22 +38,6 @@ angular.module('velourApp').service('mainService', function($http){
 
 	
 
-	// this.showOrderer = function(){
-	// 	for(var i=0; i <Shows.length; i++){
-	// 		if (Shows[i])
-	// 	}
-	// }
-	// this.showSorter = function(){
-	// 	for(var i = 0; i < Shows.length; i++){
-	// 		for(var j = 0; j < this.calendar.length; j++){
-	// 			if (Shows[i].dayOfShow === this.calendar[j].date){
-	// 				this.calendar[j].shows.push(Shows[i])
-	// 				this.calendar[j].isShow = true;
-	// 				}
-	// 			}	
-	// 		}
-	// 	}
-
 		this.showSorter = function(unsortedShows, calendar){	
 			for(var i = 0; i < unsortedShows.length; i++){
 				for(var j = 0; j < calendar.length; j++){
@@ -113,5 +97,36 @@ angular.module('velourApp').service('mainService', function($http){
 
 	
 	}
+	
+	var url = 'http://localhost:8008'
+	this.findShow = function(){
+		return $http({
+			method: 'GET',
+			url: url + '/show'
+			}).then(function(response){
+					var showsData = response.data;
+					var shows = [];
+					for (var show in showsData) {
+						var showsObj = {
+							id: showsData[show]._id,
+							artist: showsData[show].artist,
+							date: {
+									day:showsData[show].date.day,
+									month:showsData[show].date.month,
+									year:showsData[show].date.year
+									
+								},
+							time:{
+									hour:showsData[show].time.hour,
+									minute:showsData[show].time.minute
+								},
+							description:showsData[show].description,
+							price:showsData[show].ticketPrice									
+						}
+						shows.push(showsObj)
+					}
+					return shows;
+				})
+		};
 })
 

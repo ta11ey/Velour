@@ -163,3 +163,11 @@ button{
 .fa {
 	margin:20px 0;
 }
+
+/*-------------------------calendar---------------------------*/
+.day{
+	width:200px;
+	height:200px;
+	border:1px solid gray;
+	float:left;
+}

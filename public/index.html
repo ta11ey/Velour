@@ -36,11 +36,10 @@
         <div class="todaysDate"><div>CONCERT FEED:</div>{{todaysDate}}</div>
         <div class="shows" ng-repeat = 'sidebarShows in Shows'>
         <div class="eachShow">
-            <div class="bandPic">{{sidebarShows.shows[0].photo}}</div>
             <div class="eachShowInfo">
-              <div class="artist">{{sidebarShows.shows[0].artist.toUpperCase()}}</div>
-              <div class="dateOfShow">{{sidebarShows.shows[0].month}}/{{sidebarShows.shows[0].dayOfShow}}/{{sidebarShows.shows[0].year}}</div>
-              <div class="timeOfShow">{{sidebarShows.shows[0].timeOfShow}}</div>
+              <div class="artist">{{sidebarShows.artist.toUpperCase()}}</div>
+              <div class="dateOfShow">{{sidebarShows.date.month}}/{{sidebarShows.date.day}}/{{sidebarShows.date.year}}</div>
+              <div class="timeOfShow">{{sidebarShows.time.hour}}:{{sidebarShows.time.minute}}</div>
            </div>
            <button><a href="">Get Tickets</a></button>
             <!--<button><a href="">More Info</a></button>-->
@@ -73,7 +72,9 @@
   <script src="js/app.js"></script>
   <script src="js/controllers/homeCtrl.js"></script>
   <script src="js/controllers/mainCtrl.js"></script>
+   <script src="js/controllers/calendarCtrl.js"></script>
   <script src="js/services/mainService.js"></script>
+  <script src="js/services/calendarService.js"></script>
 
 
 
