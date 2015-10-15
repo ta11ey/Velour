@@ -1,36 +1,90 @@
 angular.module('velourApp').controller('calendarCtrl', function($scope, calendarService){
 	var date = new Date();
-	var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	var currentMonth = date.getMonth();
+	var month = ['placeHolderFor0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	var currentMonth = date.getMonth()+1; //month based off of 1-12
 	var currentYear = date.getYear() ;
+	var getMonthShows = calendarService.getMonthShows
+	
+	$scope.weekDayNum = (function(){
+							var weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+							return date.getDay()
+							
+						})();
+		// console.log($scope.weekDayNum)
+		
+
 	
 						
-	$scope.month = function(){
-			return month[date.getMonth()];
-		}
+	$scope.month = (function(){
+						return month[currentMonth];
+					})();
+		 console.log($scope.month)
 	$scope.previousMonth = function(){
-		currentMonth = currentMonth -1;
-		console.log(currentMonth)
-	}
+								if (currentMonth > 1) {
+										currentMonth = currentMonth -1;
+										$scope.month = month[currentMonth];
+									}
+								viewMonthCalendar();
+							}
+	$scope.nextMonth = function(){
+								if (currentMonth < 13) {
+										currentMonth = currentMonth +1;
+										$scope.month = month[currentMonth];
+									}
+								viewMonthCalendar();
+							}
+	
+	
 	
 
 
 	
 	
 	var viewMonthCalendar = function(){
-			$scope.calendar = [];
-			var daysInMonth = (function(month,year) {
-    						var numOfDays = new Date(year, month, 0).getDate();
-							return numOfDays + 1
-						})(currentMonth, currentYear)
-						
-			for (var i = 0; i < daysInMonth; i++){
-				$scope.calendar.push({})
-			}
+								$scope.calendar = [];
+								$scope.$index = 1; //days  displayed on the month
+								$scope.placeholder = [];
+								
+								var monthStartDay = (function(){
+															var startDayNum = new Date(2015, (currentMonth - 1), 01).getDay()
+															console.log(startDayNum)
+															
+															// console.log(currentMonth + 'starts on '+ startDayNum);
+															return startDayNum;
+														})();
+								var placeHolderCreater = (function(){
+																if (monthStartDay <= 5){
+																	for (var i = 0; i  < monthStartDay; i ++){
+																		$scope.placeholder.push({})
+																	}
+																}
+																else if (monthStartDay === 6){
+																			
+																	}
+															})();
+									
+								var daysInMonth = (function(month,year) {
+														var numOfDays = new Date(year, month, 0).getDate();
+														return numOfDays 
+													})((currentMonth), currentYear)
+											
+								for (var i = 1; i <= daysInMonth; i++){
+										$scope.calendar.push({day:(i), shows: []})
+									}
+							
+								getMonthShows(currentMonth)
+									.then(function(response){
+											for (i = 0; i <=$scope.calendar.length; i++){
+													for (var show in response.data){
+															if(response.data[show].date.day === (i)){
+																$scope.calendar[i-1].shows.push(response.data[show].artist)// i-1 because calendar is an array starting at 0
+															}
+														}
+												}
+											})
+						}
 		
-		}
-		
-		viewMonthCalendar();
+	viewMonthCalendar();
 	
-	console.log($scope.calendar)
+ 
 })

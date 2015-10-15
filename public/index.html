@@ -4,6 +4,8 @@
 	<title></title>
 	<link rel = "stylesheet" href = "styles/normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/home.css">
+  <link rel="stylesheet" type="text/css" href="styles/calendar.css">
   <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
@@ -23,48 +25,111 @@
     <nav>
       <ul>
         <li class="home" ><a href='#/home'>HOME</a></li>
-        <li class="shows"><a href='#/shows'>SHOWS</a></li>
+        <li class="headshows"><a href='#/shows'>SHOWS</a></li>
         <li class="about"><a href='#/about'>ABOUT</a></li>
         <li class="press"><a href='#/press'>PRESS</a></li>
-        <li class="store"><a href='#/store'>STORE</a></li>
+        <!--<li class="store"><a href='#/store'>STORE</a></li>-->
      </ul>
 
     </nav>
   </header>
   <div class="content" ng-controller='mainCtrl'>
+
     <div class="upcomingShows">
-        <div class="todaysDate"><div>CONCERT FEED:</div>{{todaysDate}}</div>
-        <div class="shows" ng-repeat = 'sidebarShows in Shows'>
-        <div class="eachShow">
-            <div class="eachShowInfo">
-              <div class="artist">{{sidebarShows.artist.toUpperCase()}}</div>
-              <div class="dateOfShow">{{sidebarShows.date.month}}/{{sidebarShows.date.day}}/{{sidebarShows.date.year}}</div>
-              <div class="timeOfShow">{{sidebarShows.time.hour}}:{{sidebarShows.time.minute}}</div>
-           </div>
-           <button><a href="">Get Tickets</a></button>
-            <!--<button><a href="">More Info</a></button>-->
-        </div>
-
-
-
-       </div>
+        <div class="todaysDate"><div>UPCOMING SHOWS:</div>{{todaysDate}}</div>
+<div class="showrap">
+          <div class="shows" ng-repeat = 'sidebarShows in Shows'>
+              <div class="eachShow">
+                  <div class="eachShowInfo">
+                    <div class="artist">{{sidebarShows.artist.toUpperCase()}}</div>
+                    <div class="dateOfShow">{{sidebarShows.date.month}}/{{sidebarShows.date.day}}/{{sidebarShows.date.year}}</div>
+                    <div class="timeOfShow">{{sidebarShows.time.hour}}:{{sidebarShows.time.minute}}</div>
+                </div>
+                <button><a href="">Get Tickets</a></button>
+                  <!--<button><a href="">More Info</a></button>-->
+              </div>
+          </div>
+</div>
 
     
     </div>
     <div class="mainInfo">
       <ng-view></ng-view>
     </div>
+    
+    <div class="divider"><img src="media/divider.png" alt=""></div>
+   
 
+<footer>
+<div class="links">
+  <div class="footer-cards footer-about">
+      <h2>ABOUT</h2>
+      <p><a>location</a></p>
   </div>
-  <div class="contactIcon">
-	<div><a href="#"><i class="fa fa-instagram"></i></a></div>
-	<div><a href="#"><i class="fa fa-facebook"></i></a></div>
-	<div><a href="#"><i class="fa fa-twitter"></i></a></div>
+  <div class="footer-cards footer-connect">
+      <h2>CONNECT </h2>
+      <p><a>Book A Show</a></p>
+      <p><a>Facebook</a></p>
+      <p><a>Instagram</a></p>
+  </div>
+  <div class="footer-cards footer-contact">
+    <h2>CONTACT</h2>
+      <p><a>888-8888</a></p>
+      <p><a>email@email.com</a></p>
+      <p><a href = './js/templates/adminTmp.html'>admin</a></p>
+  </div>
+  
 </div>
-
-  <footer >
-    <a href='./js/templates/adminTmp.html'>admin</a>
-  </footer> 
+  
+  <div class="tyr">
+    <p>site by TYR </p>
+  </div>
+</footer>
+  <!--<footer>
+  <div id="footer-copy">
+    <div class="footer-group">
+      <h3>About</h3>
+      <a href="">Location</a>
+      <a href="">Maintenance</a>
+      
+    </div>
+    <div class="footer-group">
+      <h3>Connect</h3>
+      <a href="">Book a Show</a>
+      
+    </div>
+    <div class="footer-group">
+      <h3>Contact</h3>
+      <a href="">Overview</a>
+      
+    </div> 
+    <div class="footer-group">
+      <h3>Admin</h3>
+      <a href="./js/templates/adminTmp.html">admin</a>
+      
+    </div> 
+    <div class="clear-floats"></div>
+    
+    <div id="footer-contact">
+      <div>
+        <span class="nw footer-contact-company-name">VELOUR LIVE MUSIC GALLERY</span>
+        <span class="footer-divider">|</span>
+        <span class="nw">135 N University Ave</span>
+        <span class="footer-divider">|</span>
+        <span class="nw">Provo, UT 84061</span>
+      </div>
+      <div><span class="footer-divider">|</span></div>
+      <div>
+        <span class="nw">Phone: <a href="tel:509-734-0669">509-734-0669</a></span>
+        <span class="footer-divider">|</span>
+        
+        
+      </div>
+    </div>
+    
+    <div id="footer-copyright">Site created by Tyr.</div>
+  </div>
+<footer>-->
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
@@ -75,6 +140,8 @@
    <script src="js/controllers/calendarCtrl.js"></script>
   <script src="js/services/mainService.js"></script>
   <script src="js/services/calendarService.js"></script>
+  <script src="js/controllers/aboutCtrl.js"></script>
+   <script src="js/services/aboutService.js"></script>
 
 
 

@@ -46,20 +46,29 @@ li{
 .todaysDate{
 	text-align: center;
 	color: lightgray;
-	margin-bottom:10px;
-	margin-top: 10px;
-	font-size: 15
+	font-size: 15;
+	padding-top: 15px;
+	padding-bottom:10px;
+	width:90%;
+	background: #260d13;
+	margin:10px auto 0;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border: 1px solid #bdae85;
+	box-sizing: border-box;
+
 }
 
 .todaysDate >div {
 	font-size: 20px;
+	text-align: center;
+	margin:0 auto;
 }
 
 .content{
 	display:float;
 	width:100%;
 	margin:0 auto;
-	height:100vh;
 	float:left;
 
 }
@@ -67,14 +76,36 @@ li{
 .shows{
 	width: 90%;
 	margin-left:5%;
+	margin-top: 60px;
 
 }
 
 .upcomingShows{
 	width:25%;
-	height:100vh;
+	height:50vh;
 	float:left;
+	
+
 }
+
+.showrap {
+	height:100%;
+	overflow:auto;
+	border:2px solid #bdae85;
+	margin: 0 auto;
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	width:90%;
+	box-sizing: border-box;
+	-webkit-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.62);
+	-moz-box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.62);
+	box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.62);
+	-webkit-box-shadow: inset -3px -4px 17px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset -3px -4px 17px 2px rgba(0,0,0,0.75);
+	box-shadow: inset -3px -4px 17px 2px rgba(0,0,0,0.75);
+}
+
 .bandPic{
 	width: 100px;
 	margin:5px;
@@ -102,8 +133,8 @@ button > a {
 	padding:0;
 
 }
-button{
-		background-color: rgba(188, 24,21, .3);
+.eachShow > button{
+		background-color: #360d13;
 		margin: 0;
 		padding: 0;
 		border: none;
@@ -112,62 +143,129 @@ button{
 		height:20%;
 		margin-top:15%;
 }
+
+.divider >img {
+	width:100%
+}
 .mainInfo{
 	float:left;
 	width:75%;
 	/*height: 100vh;*/
 }
 
-/*----------------HOME--------------------------------*/
-.homeTitle{
-	display:float;
-	border: 1px solid tan;
-	height: 325px;
-	margin: 20px;
+/*----------footer-------------------*/
+
+/*footer {
+  padding:40px 0px 40px 0px;
+  background: #333333
 }
 
-.homeTitle > div{
-	font-family: 'Playfair Display', serif;
-	font-size:90px;
-	float:left;
+
+footer h3 {
+  color:#ffffff;
+  font-size:16px;
+  font-weight:400;
+  padding:0;
+  margin:0px 0px 15px 0px;
 }
 
-.liveMusic, .venue{
-	clear:left;
-	margin-top: -30px;;
+footer a {
+  color:#ffffff;
+  font-size:14px;
+  line-height:22px;
+  font-weight:300;
+  text-decoration:none;
+  display:block;
 }
 
-.provobest, .liveMusic, .venue {
-	margin-left: 30px;
+footer a:hover {
+  text-decoration:underline;
 }
 
-.homeInfo{
-	display:flex;
-	padding:20px;
-}
-.homeInfo >div{
-	flex:1;
-	text-align: center;
-	padding:20px;
+.footer-group {
+  float:left;
+  margin:0px 50px 0px 0px;
 }
 
-.contactIcon{
-	text-align: center;
-	position:fixed;
-	background:green;
-	right:0;
-	width:30px;
-	top:10%;
+
+.footer-social-media-link {
+  display:inline-block;
+  cursor:pointer;
+  background-position:center;
+  background-repeat:no-repeat;
+  width:27px;
+  height:26px;
+  margin:4px;
 }
 
-.fa {
-	margin:20px 0;
+#footer-contact {
+  color:white;
+  font-size:12px;
+  font-weight:300;
+  padding:30px 0px 10px 0px;
 }
 
-/*-------------------------calendar---------------------------*/
-.day{
-	width:200px;
-	height:200px;
-	border:1px solid gray;
-	float:left;
+#footer-contact div {
+  display:inline;
 }
+
+#footer-contact a {
+  display:inline;
+  color:inherit;
+  font-size:inherit;
+  line-height:inherit;
+}
+
+#footer-copyright {
+  color:#eeeeee;
+  font-size:11px;
+  font-weight:300;
+}
+
+.footer-divider {
+  margin:0px 4px 0px 4px;
+}*/
+
+footer {
+  width: 100%;
+  background: #260d13;
+  padding-top: 50px;
+}
+.links{
+  display:flex;
+  width:60%;
+  margin: 0 auto;
+}
+.footer-cards{
+  margin: 0 auto;
+}
+
+.footer-connect{
+   margin:0 100px;
+}
+
+.tyr{
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.footer-cards > p {
+	display: block;
+}
+
+.footer-cards > h2 {
+	margin-bottom: 20px;
+	
+}
+p >a:hover {
+	text-decoration: underline;
+}
+
+P, h2{
+  margin:0;
+}
+
+
+  
+

@@ -12,7 +12,7 @@ app.config(function($routeProvider){
 		})
 		.when('/about', {
 			templateUrl: 'js/templates/aboutTmp.html',
-			//controller: 'aboutCtrl'
+			controller: 'aboutCtrl'
 		})
 		.when('/contact', {
 			templateUrl: 'js/templates/contactTmp.html',
