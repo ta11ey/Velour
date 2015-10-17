@@ -19,9 +19,7 @@ angular.module('velourApp').controller('mainCtrl',function($scope, mainService){
 
 					for (var i = 0; i < shows.length; i++){
 							if (parseInt(shows[i].date.month) === currentMonth){
-								console.log(shows[i].date.month)
 									if (shows[i].date.day >= currentDay){
-											console.log(shows[i])
 											$scope.Shows.push(shows[i]);
 										}
 								}

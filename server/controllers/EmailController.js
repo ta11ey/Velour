@@ -10,5 +10,22 @@ module.exports = {
 					res.json(result);
 					}
 				})
+	},
+	
+	read: function(req, res) {
+				Email.find({'email':req.params.id})
+					.exec(function(err, result){
+							if (err) return res.send(err);
+							res.json(result);
+						})
+	},
+	verifyread: function(req, res){
+					Email.count({'email': req.params.id}, function (err, count){ 
+    					if(count>0){
+							console.log(count)
+							res.json(true)
+   					 		}
+						else res.json(false)
+						}); 
 	}
 }

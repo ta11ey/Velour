@@ -15,11 +15,6 @@ angular.module('velourApp').service('aboutService', function($http){
 									data: {
 										'key':  manKey,
 										'message': {
-										"global_merge_vars": [
-												{
-													"code": code
-												}
-           									],
 										'from_email': 'jacob.talley@hotmail.com',
 										'to': [
 											{
@@ -34,6 +29,40 @@ angular.module('velourApp').service('aboutService', function($http){
 										}
 									}
 									})
-								}
+								};
+	this.freeTicketEmail = function(email){
+								return $http({
+									method: 'POST',
+									url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+									data: {
+										'key':  manKey,
+										'message': {
+										'from_email': 'jacob.talley@hotmail.com',
+										'to': [
+											{
+												'email': email,
+												// 'name': name,
+												'type': 'to'
+											}
+											],
+										'autotext': 'true',
+										'subject': 'Velour Verification',
+										'html': '<h1>heres the free ticket fam</h1>'
+										}
+									}
+									})
+								};
+	this.getEmail = function(email){
+							return $http({
+								method: 'GET',
+								url: url + '/email/'+email
+							})
+					};
+	this.verifyEmail = function(email){
+							return $http({
+								method: 'GET',
+								url: url + '/verifyemail/'+email
+							})
+					}
 	
 })

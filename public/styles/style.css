@@ -36,7 +36,7 @@ ul{
 
 }
 
-li{
+.homeli{
 	flex:1;
 	text-align: center;
 }
@@ -266,6 +266,4 @@ P, h2{
   margin:0;
 }
 
-
-  
 

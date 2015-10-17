@@ -1,3 +1,6 @@
+ 
+ 
+ 
  angular.module('velourApp').service('adminService', function($http){
 	
 	var url = 'http://localhost:8008'

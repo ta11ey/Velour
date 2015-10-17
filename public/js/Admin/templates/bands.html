@@ -1,22 +1,9 @@
+<div>
+	<button ng-click='toggleAddView()'>Add Show</button>
+	<button ng-click='toggleUpdateView(); findShow()'>Update Show</button>
+</div>
 
-
-
-<!DOCTYPE html>
-<html ng-app ='velourApp'>
-<head>
-	<title>Admin</title>
-	<link rel = "stylesheet" href = "../../styles/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../../styles/adminStyle.css"> 
-
- <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-</head>
-<body ng-controller='adminCtrl'>
- 
-
-	<div class="bandInput" >
+<div ng-show ='showAdd' class="bandInput" >
 
 		<div class='inputLine'>
 			artist:<input ng-model="artist" placeholder='artist'></input>
@@ -42,18 +29,27 @@
 		price:<input ng-model='price'></input>
 		</div>
 		
-	</div>
+
+
 	</br>
+	
 	<button class = 'addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
-	<div class="search">
+	
+</div>
+	<div class="search" ng-show = 'showUpdateButton'>
+		
+		
 		<div class="searchBar">
-			search for artist<input ng-model='search'>{{search}}</input>
-			<button ng-click='findShow(search)'>Find</button>
+			artist: <input ng-model='search'></input>
 		</div>
-		<div class="searchedShows" ng-repeat = 'show in shows'>
+		
+		
+		<div class="searchedShows" ng-repeat = 'show in shows |filter: {artist:search}'>
 			{{show.artist}}
-			<button ng-click='showUpdate = true'>update</button>
+			<button ng-click='ngShowToggle()'>update</button>
 			<button ng-click='deleteShow(show.id)'>delete</button>
+			
+			
 			<div class="updateShow" ng-show ='showUpdate'>
 				<div class="updatedArtistInput">
 					artist: 		<input ng-model = 'updatedArtist.artist' placeholder = '{{show.artist}}'></input>
@@ -76,19 +72,5 @@
 				<button ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>done</button>
 				
 			</div>
-			</div>
-			
-			
-			
 		</div>
-	</div>
-  <script src="../app.js"></script>
-   <script src="../services/adminService.js"></script>
-  <script src="../controllers/adminCtrl.js"></script>
-
-  <script src="../services/mainService.js"></script>
-
-
-  
-</body>
-</html>
+</div>

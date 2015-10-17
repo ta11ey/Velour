@@ -1,0 +1,40 @@
+
+
+	<link rel = "stylesheet" href = "styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/adminStyle.css"> 
+<body>
+
+	
+	<header>
+		<div class ='velourAdmin'>
+			<div class='adminTitle'>Velour<br>Admin</div>
+		</div>
+	</header>
+	
+	<div class="wrapper">
+		<nav>
+			
+				<ul class="bands">
+					<a ui-sref="admin.bands"><li ng-class="{active: isActive('/admin/bands')}"class ='adminli liBands'>bands</li></a>
+					<a  ui-sref="admin.emails"><li ng-class="{active: isActive('/admin/emails')}" class ='adminli liEmails'>Emails</li></a>
+					<a  ui-sref="admin.newsletter"><li  ng-class="{active: isActive('/admin/newsletter')}" class ='adminli liNews'>NewsLetter</li></a>
+				</ul>
+		</nav>
+
+		
+	
+
+			<div class="adminContent">
+ 				<ui-view></ui-view>
+			 </div>
+	</div>
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	  
+  	
+  
+
+
+</body>

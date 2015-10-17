@@ -24,6 +24,9 @@ app.put(	'/show/:id', 	ShowsController.update);
 app.delete(	'/show/:id', 	ShowsController.delete);
 
 app.post(	'/emails',		EmailController.create)
+app.get(	'/email/:id',	EmailController.read)
+app.get(	'/verifyemail/:id', EmailController.verifyread)
+
 
 var mongoURI = 'mongodb://localhost:27017/velour';
 mongoose.set('debug', true);
