@@ -1,0 +1,14 @@
+<div class="bandinfobody" ng-controller ='bandInfoCtrl'>
+	<div class="artist_card">{{artist.artist}}</div>
+	<div class="time_card">
+		<span>{{artist.weekday}}&nbsp</span><span>{{artist.time.hour}}:{{artist.time.minute}}</span>
+	</div>
+	<div class="date_card">
+		<span>{{artist.date.month}}/</span><span>{{artist.date.day}}/</span><span>{{artist.date.year}}</span>
+	</div>
+	<div class="price_card">
+		${{artist.price}}
+	</div>
+	<div class="description_card">{{artist.description}}</div>
+	<!--{{test}}-->
+</div>

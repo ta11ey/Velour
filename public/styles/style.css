@@ -1,5 +1,5 @@
 div{
-	color:lightgray;
+	color:white;;
 	font-family: 'Muli';
 }
 
@@ -84,7 +84,7 @@ ul{
 	width:25%;
 	height:50vh;
 	float:left;
-	
+	margin-bottom: 40px;
 
 }
 
@@ -148,6 +148,7 @@ button > a {
 	width:100%
 }
 .mainInfo{
+	min-height: 75vh;
 	float:left;
 	width:75%;
 	/*height: 100vh;*/
@@ -267,3 +268,6 @@ P, h2{
 }
 
 
+.mainNav {
+	margin-top:10px;
+}

@@ -42,10 +42,38 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+input:focus {outline:none;}
+button:focus {outline:none;}
+
 
 /*-----------------------------------------------------------------------------*/
+.adminFooter{
+	position:fixed;
+	bottom:0;
+	height:60px;
+	width:100%;
+	background: #232531;
+	font-size:40px;
+	font-family: 'Oswald', sans-serif;
+	padding:20px;
+}
+.bands {
+	color: #232531;
+	font-size: 25px;
+	font-family: 'Oswald', sans-serif;
+	}
+
+	
+
+.adminTabBands, .adminTabEmails {
+		font-family: 'Oswald', sans-serif;
+}
 .active{
 	background:#232531;
+	-webkit-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
+	box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
+	color:white;
 }
 body{
 	background:white;
@@ -58,19 +86,26 @@ body{
 
 .velourAdmin {
 	color:white;
-	font-size: 40px;
+	font-size: 80px;
 	text-align: center;
+	font-family: 'Oswald', sans-serif;
 }
 
 
 header {
 	width: 100%;
-	background: #232531
+	background: #232531;
+	-webkit-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
+	box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
 }
 
 .bandInput{
+	font-family: 'Oswald', sans-serif;
 	display: float;
 	width:400px;
+	margin-top: 20px;
+	color: #4d4d4d
 }
 .dateInput{width: 40px;}
 
@@ -79,6 +114,10 @@ header {
 	float:left;
 	clear:left;
 	margin:5px;
+	color: #232531;
+	font-size:20px;
+	height:50px;
+
 }
 .time >input {
 	width: 30px;
@@ -91,11 +130,20 @@ header {
 
 .price{
 	clear: both;
+
+}
+.price > input {
+	width:400px;
+}
+.artistInput > input {
+	width:400px;
 }
 
 .search{
 	float:left;
 	clear:both;
+	width: 100%;
+
 }
 
 .nav{
@@ -114,3 +162,202 @@ header {
 }
 
 
+/*------------------------------------*/
+.updateShowPage{
+	display:float;
+}
+.showButton{
+	height:40px;
+	width: 150px;
+	background: mediumseagreen;
+	border-radius:8px;
+	color: white;
+}
+.searchBar {
+
+	margin-top:30px;
+	font-size: 40px;
+	color: #4D4D4D
+
+}
+
+.searchBar > input {
+	font-family: 'Oswald', sans-serif;
+	height:40px;
+	font-size:30px;
+}
+.searchedShows {
+	float:left;
+	font-family: 'Oswald', sans-serif;
+	display:float;
+	width: 100%;
+	height:90px;
+	text-align: center;
+	margin: 5px 0;
+	color: white;
+	-webkit-box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
+	box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
+
+}
+
+.fa-trash-o {
+	float:left;
+	width: 40px;height:40px;
+	background: red;
+	color:white;
+	margin-left:10px;
+	border-radius:10px;
+	padding-top:3px;
+}
+ .fa-trash-o {
+  color: #fff;
+  background-color: #FF1D23;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #94090D;
+}
+
+.fa-trash-o:hover,
+.fa-trash-o.hover {
+  background-color: #D40D12
+}
+
+.fa-trash-o:active,
+.fa-trash-o.active {
+  background-color: #D40D12;
+  box-shadow: 0 5px #94090D;
+  transform: translateY(5px);
+}
+.adminArtist{
+	float:left;
+	font-size:40px;
+	color:white;
+	margin-top:20px;
+	margin-left:20px;
+}
+
+.updateArtist {
+	float: right;
+	height:30px;
+	width: 150px;
+	background: mediumseagreen;
+	margin-right:40px;
+	margin-top: 30px;
+	border-radius: 10px;
+}
+.searchedShows:nth-child(2n) {
+  background-color: #4D4D4D;
+  
+}
+.searchedShows:nth-child(2n+1) {
+	background-color: #333333
+}
+.updateShow{
+	float:left;
+	height:250px;
+	width:100%;
+	margin:0 auto;
+	background: #232531;
+	padding: 5px;
+
+
+}
+
+.updatedArtistInput{
+	 margin-left:60px;
+	 margin-bottom:10px;
+}
+
+.updatedArtistInput > input {
+	background:transparent;
+	border:none;
+	border-bottom:1px solid gray;
+	width: 300px;
+	height:50px;
+	font-size: 30px;
+	 box-sizing: border-box;
+  	transition: box-shadow 0.3s, border 0.3s;
+}
+
+
+.updatedDateInput{
+		margin-left:100px;	
+}
+.updatedDateInput > input{
+	background:transparent;
+	border:none;
+	border-bottom:1px solid gray;
+	width:40px;
+	transition: box-shadow 0.3s, border 0.3s;
+
+}
+
+.updatedTimeInput {
+	margin-left:100px;
+}
+.updatedTimeInput > input {
+	background:transparent;
+	border:none;
+	border-bottom: lightgray;
+	width:20px;
+	margin:5px 0;
+
+
+}
+
+.updatedDesInput > input {
+	background:transparent;
+	border:none;
+	border-bottom: lightgray;
+	transition: box-shadow 0.3s, border 0.3s;
+	margin-left:100px;
+
+}
+
+.updatedPriceInput {
+	margin-left:100px;
+}
+.updatedPriceInput > input {
+	background:transparent;
+	border:none;
+	border-bottom: lightgray;
+
+}
+
+.updatedPriceInput > input:focus{
+	border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+ 
+	
+}
+.updatedDesInput > input:focus{
+	border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+	
+}
+.updatedTimeInput > input:focus{
+	border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+	
+}
+.updatedDateInput > input:focus{
+	border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+	
+}
+.updatedArtistInput > input:focus{
+	 border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+
+.updatedTimeInput1{
+		margin-left:100px;
+}
+
+.updateShow > button {
+	margin-top:20px;
+}
+
+/*-------------------------------------------band input---------------*/

@@ -1,76 +1,132 @@
+<div class="adminTabBands">
 <div>
-	<button ng-click='toggleAddView()'>Add Show</button>
-	<button ng-click='toggleUpdateView(); findShow()'>Update Show</button>
+	<button class='showButton' ng-click='toggleAddView()'>Add Show</button>
+	<button class='showButton' ng-click='toggleUpdateView(); findShow()'>Update Show</button>
 </div>
 
 <div ng-show ='showAdd' class="bandInput" >
 
-		<div class='inputLine'>
-			artist:<input ng-model="artist" placeholder='artist'></input>
+		<div class='inputLine artistInput'>
+			<input ng-model="artist" placeholder='artist'></input>
 		</div>
 
 		<div class='inputLine'>
-			date of show:
-				<input class ='dateInput' ng-model="month" placeholder='mm'></input>/
-				<input  class ='dateInput' ng-model="day" placeholder='dd'></input>/
+				<select name="date" ng-model ='month' placeholder ='mo'>
+    				<option value="" disabled selected>Mo</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>	
+				</select>/
+				<select name="date" ng-model='day' ng-model ='day'>
+    				<option value="" disabled selected>Day</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>					
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>	
+					<option value="15">15</option>	
+					<option value="16">16</option>	
+					<option value="17">17</option>	
+					<option value="18">18</option>	
+					<option value="19">19</option>	
+					<option value="20">20</option>	
+					<option value="21">21</option>
+					<option value="22">22</option>	
+					<option value="23">23</option>	
+					<option value="24">24</option>	
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>								
+					<option value="28">28</option>
+					<option value="29">29</option>	
+					<option value="30">30</option>
+					<option value="31">31</option>			
+				</select>/
 
-				<input  class ='dateInput' ng-model="year" placeholder='yyyy'></input>
+				<select name="year" ng-model='year'>
+					<option value="" disabled selected>Year</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					
+					
+				</select>
+				
 		</div>
 
 		<div class='inputLine time'>
-			show time:<input ng-model="hour" placeholder='hr'></input>:
-						<input ng-model="minute" placeholder='mn'></input>
+				<input ng-model="hour" placeholder='hr'></input>:
+				<input ng-model="minute" placeholder='mn'></input>
 		</div>
 		
 		<div class='inputLine description'>
 			<textarea ng-model='description' placeholder='description(optional)'></textarea>
 		</div>
 		<div class="inputLine price" >
-		price:<input ng-model='price'></input>
+		<input ng-model='price' placeholder="price"></input>
 		</div>
 		
 
 
 	</br>
 	
-	<button class = 'addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
+	<button class = ' showButton addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
 	
 </div>
-	<div class="search" ng-show = 'showUpdateButton'>
+	<div class="updateShowPage" ng-show = 'showUpdateButton'>
 		
 		
 		<div class="searchBar">
-			artist: <input ng-model='search'></input>
+			FILTER: <input ng-model='search'></input>
 		</div>
 		
+		<div class="adminShowsCard" ng-repeat = 'show in shows |filter: {artist:search}'>
+		<div class="searchedShows" >
+			<a ng-click='deleteShow(show.id)'><i  class="fa fa-trash-o fa-2x"></i></a>
+			<div class = 'adminArtist'>{{show.artist}}</div>
+			<button ng-click='ngShowToggle()' class = 'updateArtist'>update</button>
+		</div>
 		
-		<div class="searchedShows" ng-repeat = 'show in shows |filter: {artist:search}'>
-			{{show.artist}}
-			<button ng-click='ngShowToggle()'>update</button>
-			<button ng-click='deleteShow(show.id)'>delete</button>
-			
-			
 			<div class="updateShow" ng-show ='showUpdate'>
 				<div class="updatedArtistInput">
-					artist: 		<input ng-model = 'updatedArtist.artist' placeholder = '{{show.artist}}'></input>
+					 <input ng-model = 'updatedArtist.artist' placeholder = '{{show.artist}}'></input>
 				</div>
 				<div class="updatedDateInput">
-					date: 			<input ng-model = 'updatedArtist.date.month' placeholder = '{{show.date.month}}'></input>
-									/<input ng-model = 'updatedArtist.date.day' placeholder = '{{show.date.day}}'></input>
-									/<input ng-model = 'updatedArtist.date.year' placeholder = '{{show.date.year}}'></input>
+					<input ng-model = 'updatedArtist.date.month' class = 'updatedDateInput1'placeholder = '{{show.date.month}}'></input>
+					/<input ng-model = 'updatedArtist.date.day' placeholder = '{{show.date.day}}'></input>
+					/<input ng-model = 'updatedArtist.date.year' placeholder = '{{show.date.year}}'></input>
 				</div>
 				<div class="updatedTimeInput">
-					time: 			<input ng-model = 'updatedArtist.time.hour' placeholder = '{{show.time.hour}}'></input>
-									:<input ng-model = 'updatedArtist.time.minute' placeholder = '{{show.time.minute}}'></input>
-				</div>
-				<div class="updatedDesInput">
-					description: 	<input ng-model = 'updatedArtist.description' placeholder = '{{show.description}}'></input>
+					<input ng-model = 'updatedArtist.time.hour' class = 'updatedTimeInput1'placeholder = '{{show.time.hour}}'></input>
+					:<input ng-model = 'updatedArtist.time.minute' placeholder = '{{show.time.minute}}'></input>
 				</div>
 				<div class="updatedPriceInput">
-					price: 			<input ng-model = 'updatedArtist.ticketPrice' placeholder="{{show.price}}"></input>
+					$<input ng-model = 'updatedArtist.ticketPrice' placeholder="{{show.price}}"></input>
 				</div>
-				<button ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>done</button>
+				<div class="updatedDesInput">
+					<input ng-model = 'updatedArtist.description' placeholder = '{{show.description}}'></input>
+				</div>
 				
+				<button class = 'showButton'ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>Submit</button>
 			</div>
-		</div>
+		<div>
+</div>
+
 </div>

@@ -6,30 +6,28 @@
     <div class="logo">
       <img src="media/velourHeader.png">
     </div>
-    <nav>
+    <nav class = 'mainNav'>
       <ul>
-        <li class="homeli home" ><a ui-sref='velour.main'>HOME</a></li>
-        <li class="homeli headshows"><a ui-sref='velour.shows'>SHOWS</a></li>
-        <li class="homeli about"><a ui-sref='velour.about'>ABOUT</a></li>
-        <li class="homeli press"><a ui-sref='velour.press'>PRESS</a></li>
+        <li class="homeli home"  ><a  ng-click = 'hideUpcomingShows()' ui-sref='velour.main'>HOME</a></li>
+        <li class="homeli headshows" ><a  ng-click = 'hideUpcomingShows()' ui-sref='velour.shows'>SHOWS</a></li>
+        <li class="homeli about"><a  ng-click = 'hideUpcomingShows()'ui-sref='velour.about'>ABOUT</a></li>
+        <li class="homeli press"><a ng-click = 'hideUpcomingShows()' ui-sref='velour.press'>PRESS</a></li>
         <!--<li class="store"><a href='#/store'>STORE</a></li>-->
      </ul>
-
     </nav>
   </header>
-  <div class="content" ng-controller='mainCtrl'>
-
-    <div class="upcomingShows">
+  <div class="content">
+    <div ng-show='calendarToggle' class="upcomingShows">
         <div class="todaysDate"><div>UPCOMING SHOWS:</div>{{todaysDate}}</div>
 <div class="showrap">
-          <div class="shows" ng-repeat = 'sidebarShows in Shows'>
+          <div class="shows" ng-controller='bandInfoCtrl' ng-repeat = 'sidebarShows in Shows'>
               <div class="eachShow">
                   <div class="eachShowInfo">
                     <div class="artist">{{sidebarShows.artist.toUpperCase()}}</div>
                     <div class="dateOfShow">{{sidebarShows.date.month}}/{{sidebarShows.date.day}}/{{sidebarShows.date.year}}</div>
                     <div class="timeOfShow">{{sidebarShows.time.hour}}:{{sidebarShows.time.minute}}</div>
                 </div>
-                <button><a href="">Get Tickets</a></button>
+                <button ng-click='getBandInfo(sidebarShows.artist)'><a ui-sref='velour.bandInfo' >Get Tickets</a></button>
                   <!--<button><a href="">More Info</a></button>-->
               </div>
           </div>

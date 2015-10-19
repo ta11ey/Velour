@@ -18,6 +18,7 @@ app.use(cors());
 //endpoints
 
 app.get(	'/show', 		ShowsController.read);
+app.get(	'/showdata/:artist',ShowsController.readArtist);
 app.get(	'/show/:MId',	ShowsController.readMId);
 app.post(	'/show', 		ShowsController.create);
 app.put(	'/show/:id', 	ShowsController.update);
@@ -25,7 +26,10 @@ app.delete(	'/show/:id', 	ShowsController.delete);
 
 app.post(	'/emails',		EmailController.create)
 app.get(	'/email/:id',	EmailController.read)
+app.get(	'/emails/',		EmailController.readAll)
 app.get(	'/verifyemail/:id', EmailController.verifyread)
+app.delete(	'/email/:id', 	EmailController.delete);
+
 
 
 var mongoURI = 'mongodb://localhost:27017/velour';

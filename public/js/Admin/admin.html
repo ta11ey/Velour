@@ -15,7 +15,7 @@
 		<nav>
 			
 				<ul class="bands">
-					<a ui-sref="admin.bands"><li ng-class="{active: isActive('/admin/bands')}"class ='adminli liBands'>bands</li></a>
+					<a ui-sref="admin.bands"><li ng-class="{active: isActive('/admin/bands')}"class ='adminli liBands'>Bands</li></a>
 					<a  ui-sref="admin.emails"><li ng-class="{active: isActive('/admin/emails')}" class ='adminli liEmails'>Emails</li></a>
 					<a  ui-sref="admin.newsletter"><li  ng-class="{active: isActive('/admin/newsletter')}" class ='adminli liNews'>NewsLetter</li></a>
 				</ul>
@@ -28,6 +28,10 @@
  				<ui-view></ui-view>
 			 </div>
 	</div>
+	
+	<a ui-sref="velour.main"><div class='adminFooter'>
+		Back to Velour
+	</div></a>
 	
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

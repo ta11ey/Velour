@@ -20,11 +20,7 @@
                 }
             };
         }]);
-    
-
-    /* example usage: 
-    <div slider height='500' transition='400'></div>
-    */
+        
     angular.module("ui.materialize.slider", [])
         .directive("slider", ["$timeout", function($timeout){
             return {
@@ -48,7 +44,6 @@
                 }
             };
         }]);
-
 
     angular.module("ui.materialize.collapsible", [])
         .directive("collapsible", ["$timeout", function ($timeout) {

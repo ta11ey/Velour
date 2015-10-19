@@ -1,18 +1,18 @@
 var app = angular.module('velourApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise('/')
+	$urlRouterProvider.otherwise('/home/main')
 	
 	$stateProvider
 		.state('velour', {
-			url: '/',
+			url: '/home',
 			templateUrl: 'js/velour/home.html',
-			controller: 'homeCtrl',
+			controller: 'mainCtrl',
 			})
 				.state('velour.main', {
 					url: '/main',
 					templateUrl: 'js/velour/templates/homeTmp.html',
-					controller: 'calendarCtrl'
+					controller: 'mainCtrl'
 				})
 				.state('velour.shows', {
 					url: '/shows',
@@ -39,7 +39,12 @@ app.config(function($stateProvider, $urlRouterProvider){
 					templateUrl: 'js/velour/templates/storeTmp.html',
 					//controller: 'storeCtrl'
 				})
-				.state('otherwise', {url: '/main'})
+				.state('velour.bandInfo', {
+					url: '/bandInfo',
+					templateUrl: 'js/velour/templates/bandInfoTmp.html',
+					controller: 'bandInfoCtrl'
+				})
+				// .state('otherwise', {url: '/main'})
 		.state('admin', {
 			url: '/admin',
 			templateUrl: 'js/Admin/admin.html',
@@ -57,6 +62,8 @@ app.config(function($stateProvider, $urlRouterProvider){
 					url: '/newsletter',
 					templateUrl: 'js/Admin/templates/newsletter.html',
 				})
+		
+				
 		
 })
 

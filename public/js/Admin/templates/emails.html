@@ -1,0 +1,57 @@
+<div class="adminTabEmails">
+<div>
+	<button class='showButton' ng-click='getEmails()'>Emails</button>
+	<button class='showButton' ng-click='toggleUpdateView(); findShow()'>Send Email</button>
+</div>
+
+<!--<div ng-show ='showAdd' class="bandInput" >
+
+		<div class='inputLine artistInput'>
+			<input ng-model="artist" placeholder='artist'></input>
+		</div>
+
+		<div class='inputLine'>
+				<input class ='dateInput' ng-model="month" placeholder='mm'></input>/
+				<input  class ='dateInput' ng-model="day" placeholder='dd'></input>/
+
+				<input  class ='dateInput' ng-model="year" placeholder='yyyy'></input>
+		</div>
+
+		<div class='inputLine time'>
+				<input ng-model="hour" placeholder='hr'></input>:
+				<input ng-model="minute" placeholder='mn'></input>
+		</div>
+		
+		<div class='inputLine description'>
+			<textarea ng-model='description' placeholder='description(optional)'></textarea>
+		</div>
+		<div class="inputLine price" >
+		<input ng-model='price' placeholder="price"></input>
+		</div>
+		
+
+
+	</br>
+	
+	<button class = ' showButton addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
+	
+</div>
+	<div class="updateShowPage" ng-show = 'showUpdateButton'>
+		
+		-->
+		<div class="searchBar">
+			FILTER: <input ng-model='search'></input>
+		</div>
+		
+		
+		<div class="searchedShows" ng-repeat = 'email in emails |filter: search'>
+			<a ng-click='deleteEmail(email.id)'><i  class="fa fa-trash-o fa-2x"></i></a>
+			<div class = 'adminArtist'>{{email.email}}</div>
+
+			
+			
+			
+		</div>
+</div>
+
+</div>

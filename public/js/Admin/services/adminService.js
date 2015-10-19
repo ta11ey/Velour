@@ -61,5 +61,32 @@
 		}).then(function(){
 			console.log('deleted show:' + id)
 		})
-	}
+	};
+	
+	this.getEmails = function(){
+		return $http({
+			method:'get',
+			url: url + '/emails'
+		}).then(function(res){
+			var emailsData = res.data;
+			var emails = [];
+			for (var email in emailsData){
+				var emailData = {
+						id: emailsData[email]._id,
+						email: emailsData[email].email,
+						name: emailsData[email].name
+				}
+				emails.push(emailData)
+			}
+			return emails;
+			
+		})
+	};
+	
+	this.deleteEmail = function(id){
+		$http({
+			method:'DELETE',
+			url: url + '/email/' +id
+		})
+	};
 })

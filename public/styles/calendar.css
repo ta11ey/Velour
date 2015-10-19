@@ -2,13 +2,14 @@
 .weekDayPlaceHolder {
 	width:180px;
 	height:180px;
-	float:left
+	float:left;
+	margin:5px 10px;
 }
 .calendarBody {
-	width: 1260px;
+	width: 1400px;
 	margin:0 auto;
 	display:float;
-	border: 1px solid gray;
+
 
 }
 .day{
@@ -18,9 +19,13 @@
 	height:200px;
 	float:left;
 	padding:4px;
-	border:1px solid lightgray;
 
 	box-sizing: border-box;
+	margin:8px 10px;
+	background:rgba(189,174,133, 0.8);
+	-webkit-box-shadow:  6px 6px 0px rgba(0,0,0.2);
+-moz-box-shadow:  6px 6px 0px rgba(0,0,0,0.2);
+box-shadow:  5px 5px 0px rgba(189,174,133,0.3);
 }
 .calendarButton {
 		background-color: rgba(188, 24,21, .3);
@@ -55,9 +60,20 @@
 	text-align: center;
 	float:left;
 	width: 180px;
-	border: 1px solid gray;
+
 	box-sizing: border-box;
+	background: rgb(38,13,19);
+	border: 1px solid tan;
+    height: 30px;
+    padding-top: 6px;
+	margin:0 10px;
 }
 .wrapper {
-	width:100%
+	/*width:100%;*/
+	position:absolute;
+	left:0;
+	right:0
+
 }
+
+

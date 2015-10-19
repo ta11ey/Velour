@@ -1,0 +1,24 @@
+.bandinfobody{
+	padding:10px;
+
+}
+.artist_card{
+	font-size:80px;
+	border-bottom:1px solid tan;
+	display:inline-block;
+	width: 80%;
+	margin-bottom:10px;
+}
+
+.time_card, .date_card, price_card {
+	margin:5px 0;
+}
+
+.price_card{
+	margin-bottom:20px;
+}
+
+.description_card{
+	width:50%;
+	font-size:20px;
+}
