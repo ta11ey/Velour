@@ -88,6 +88,10 @@ ul{
 
 }
 
+.artist {
+	font-size: 1.4em;
+}
+
 .showrap {
 	height:100%;
 	overflow:auto;
@@ -134,98 +138,34 @@ button > a {
 
 }
 .eachShow > button{
-		background-color: #360d13;
+		background-color: #bdae85;
 		margin: 0;
 		padding: 0;
 		border: none;
 		border-radius: 5px;
-		width:80px;
-		height:20%;
+		width:100px;
+		height:20px;
 		margin-top:15%;
+		color: #360d13;
 }
 
+.eachShow > button:hover{
+		background: 
+}
 .divider >img {
 	width:100%
 }
 .mainInfo{
 	min-height: 75vh;
 	float:left;
-	width:75%;
-	/*height: 100vh;*/
+	width:100%;
+
 }
+
+
+	
 
 /*----------footer-------------------*/
-
-/*footer {
-  padding:40px 0px 40px 0px;
-  background: #333333
-}
-
-
-footer h3 {
-  color:#ffffff;
-  font-size:16px;
-  font-weight:400;
-  padding:0;
-  margin:0px 0px 15px 0px;
-}
-
-footer a {
-  color:#ffffff;
-  font-size:14px;
-  line-height:22px;
-  font-weight:300;
-  text-decoration:none;
-  display:block;
-}
-
-footer a:hover {
-  text-decoration:underline;
-}
-
-.footer-group {
-  float:left;
-  margin:0px 50px 0px 0px;
-}
-
-
-.footer-social-media-link {
-  display:inline-block;
-  cursor:pointer;
-  background-position:center;
-  background-repeat:no-repeat;
-  width:27px;
-  height:26px;
-  margin:4px;
-}
-
-#footer-contact {
-  color:white;
-  font-size:12px;
-  font-weight:300;
-  padding:30px 0px 10px 0px;
-}
-
-#footer-contact div {
-  display:inline;
-}
-
-#footer-contact a {
-  display:inline;
-  color:inherit;
-  font-size:inherit;
-  line-height:inherit;
-}
-
-#footer-copyright {
-  color:#eeeeee;
-  font-size:11px;
-  font-weight:300;
-}
-
-.footer-divider {
-  margin:0px 4px 0px 4px;
-}*/
 
 footer {
   width: 100%;
@@ -324,3 +264,17 @@ P, h2{
 
 button:focus {outline:none; outline:0}
 input:focus {outline:none; outline:0}
+
+@media screen and (max-width: 1100px){
+	.upcomingShows{
+		width:100%
+		
+	}
+	.carousel {
+		width:100%
+	}
+}
+
+.carousel{
+	float:right;
+}

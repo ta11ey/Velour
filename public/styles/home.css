@@ -56,7 +56,7 @@ nav > ul {
 /*----------pane 2-------------*/
     
 .openMicPart {
-	height:100vh;
+
 	width:100%;
 	background:#191919;
 	float:left;
@@ -92,9 +92,9 @@ nav > ul {
 }
 
 .carousel{
-	width: 100%;
+	width: 75%;
   	overflow:hidden;
-    width:100%;
+    
 }
 
   

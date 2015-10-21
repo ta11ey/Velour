@@ -8,13 +8,14 @@ AWS.config.update({
 
 var s3bucket = new AWS.S3 ({params: {Bucket: 'velour'}})
 
-module.exports.uploadToS3 = function (fileObj, callback){
+module.exports.uploadToS3 = function (buf, fileObj, callback){
 
 	var params = {
-		Key: fileObj.fileName,
+		ACL: 'public-read',
 		Body: fileObj.fileBody,
-		ContentType: fileObj.fileType,
-		ACL: 'public-read'
+		Key: fileObj.fileName,
+		ContentType: fileObj.fileType
+		
 	}
 	s3bucket.upload(params, callback)
 }

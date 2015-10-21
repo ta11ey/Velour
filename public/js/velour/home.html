@@ -16,31 +16,22 @@
      </ul>
     </nav>
   </header>
+  
   <div class="content">
-    <div class="upcomingShows">
-        <div class="todaysDate"><div>UPCOMING SHOWS:</div>{{todaysDate}}</div>
-<div class="showrap">
-          <div class="shows" ng-repeat = 'sidebarShows in Shows'>
-              <div class="eachShow">
-                  <div class="eachShowInfo">
-                    <div class="artist">{{sidebarShows.artist.toUpperCase()}}</div>
-                    <div class="dateOfShow">{{sidebarShows.date.month}}/{{sidebarShows.date.day}}/{{sidebarShows.date.year}}</div>
-                    <div class="timeOfShow">{{sidebarShows.time.hour}}:{{sidebarShows.time.minute}}</div>
-                </div>
-                <button><a ng-click='getBandInfo(sidebarShows.artist)' >More Info</a></button>
+  
 
-              </div>
-          </div>
-</div>
-
+ 
+  
     
-    </div>
     <div class="mainInfo">
       <ui-view></ui-view>
     </div>
     
+    
     <div class="divider"><img src="media/divider.png" alt=""></div>
    
+
+
 
 <footer>
 <div class="links">
@@ -67,48 +58,4 @@
     <p>site by TYR </p>
   </div>
 </footer>
-  <!--<footer>
-  <div id="footer-copy">
-    <div class="footer-group">
-      <h3>About</h3>
-      <a href="">Location</a>
-      <a href="">Maintenance</a>
-      
-    </div>
-    <div class="footer-group">
-      <h3>Connect</h3>
-      <a href="">Book a Show</a>
-      
-    </div>
-    <div class="footer-group">
-      <h3>Contact</h3>
-      <a href="">Overview</a>
-      
-    </div> 
-    <div class="footer-group">
-      <h3>Admin</h3>
-      <a href="./js/templates/adminTmp.html">admin</a>
-      
-    </div> 
-    <div class="clear-floats"></div>
-    
-    <div id="footer-contact">
-      <div>
-        <span class="nw footer-contact-company-name">VELOUR LIVE MUSIC GALLERY</span>
-        <span class="footer-divider">|</span>
-        <span class="nw">135 N University Ave</span>
-        <span class="footer-divider">|</span>
-        <span class="nw">Provo, UT 84061</span>
-      </div>
-      <div><span class="footer-divider">|</span></div>
-      <div>
-        <span class="nw">Phone: <a href="tel:509-734-0669">509-734-0669</a></span>
-        <span class="footer-divider">|</span>
-        
-        
-      </div>
-    </div>
-    
-    <div id="footer-copyright">Site created by Tyr.</div>
-  </div>
-<footer>-->
+ 

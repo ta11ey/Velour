@@ -17,11 +17,12 @@ module.exports.create = function(req, res){
 		fileBody: buf,
 		fileType: req.body.fileType
 	}
-	AWS.uploadToS3(fileObj, function(err, data){
+	AWS.uploadToS3(buf, fileObj, function(err, data){
 		if (err){
 			console.log(err)
 			res.status(500).send(err)
 		} else {
+			// res.send(data)
 			new Image({ imageUrl : data.Location }) //whats this doing?
             .save(function(err, image) {
                 if (err) {
