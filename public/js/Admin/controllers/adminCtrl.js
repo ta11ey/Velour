@@ -70,5 +70,10 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			adminService.deleteEmail(email);
 		}
 		
-		
+		$scope.getImages = function(){
+			adminService.getImages().then(function(res){
+				$scope.images = res.data;
+				console.log(res)
+			})
+		}
 })

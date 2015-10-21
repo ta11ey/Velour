@@ -40,11 +40,16 @@ app.config(function($stateProvider, $urlRouterProvider){
 					//controller: 'storeCtrl'
 				})
 				.state('velour.bandInfo', {
-					url: '/bandInfo',
+					url: '/bandInfo/:artist',
 					templateUrl: 'js/velour/templates/bandInfoTmp.html',
-					controller: 'bandInfoCtrl'
+					controller: 'bandInfoCtrl',
+					resolve: {
+						bandInfo: function ($stateParams, bandInfoService) {
+							return bandInfoService.getBandInfo($stateParams.artist)
+						}
+					}
 				})
-				// .state('otherwise', {url: '/main'})
+
 		.state('admin', {
 			url: '/admin',
 			templateUrl: 'js/Admin/admin.html',
@@ -65,5 +70,27 @@ app.config(function($stateProvider, $urlRouterProvider){
 		
 				
 		
+})
+
+.directive('fileread', function(adminService){
+	return {
+		link: function(scope, elem, attr){
+			elem.bind('change', function(e){
+				var file = elem[0].files[0]
+				
+				var reader = new FileReader();
+				
+				reader.onload = function(loadEvent) {
+					var fileBody = reader.result;
+					
+					adminService.uploadImage(fileBody, file).then(function(res){
+						// scope.images.push(res.data)
+					})
+				}
+				
+				reader.readAsDataURL(file)
+			})
+		}
+	}
 })
 

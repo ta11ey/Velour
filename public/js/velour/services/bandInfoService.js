@@ -5,10 +5,7 @@ angular.module('velourApp').service('bandInfoService', function($http){
 			method: 'get',
 			url: url + '/showdata/' + artist
 		}).then(function(res){
-			var artist = {
-				artist: res.data[0].artist
-			}
-			return artist
+			return res.data[0]
 			})
 	}
 	

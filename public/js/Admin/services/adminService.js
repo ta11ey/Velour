@@ -89,4 +89,24 @@
 			url: url + '/email/' +id
 		})
 	};
+	
+	this.getImages = function() {
+        return $http.get('/images')
+    }
+	
+	this.uploadImage = function(fileBody, fileObj){
+		
+		var fileObj = {
+			fileName : fileObj.name,
+			fileBody : fileBody,
+			fileType: fileObj.type
+		}
+		
+		return $http({
+			method: 'post',
+			url: '/images',
+			data: fileObj
+		})
+		
+	}
 })

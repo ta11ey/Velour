@@ -209,14 +209,13 @@ header {
 	margin-left:10px;
 	border-radius:10px;
 	padding-top:3px;
+	 color: #fff;
+	background-color: #FF1D23;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 5px #94090D;
 }
- .fa-trash-o {
-  color: #fff;
-  background-color: #FF1D23;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #94090D;
-}
+
 
 .fa-trash-o:hover,
 .fa-trash-o.hover {

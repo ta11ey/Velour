@@ -83,12 +83,15 @@
 		<input ng-model='price' placeholder="price"></input>
 		</div>
 		
+		<input type="file" images = 'images' fileread/>
+		
 
 
 	</br>
 	
 	<button class = ' showButton addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
-	
+	<button ng-click='getImages()'>img	</button>
+	{{images}}
 </div>
 	<div class="updateShowPage" ng-show = 'showUpdateButton'>
 		

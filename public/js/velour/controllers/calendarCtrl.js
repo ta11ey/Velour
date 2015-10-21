@@ -1,4 +1,4 @@
-angular.module('velourApp').controller('calendarCtrl', function($scope, calendarService, $location){
+angular.module('velourApp').controller('calendarCtrl', function($scope, calendarService, $location, $state, $rootScope){
 	var date = new Date();
 	var month = ['placeHolderFor0','January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var currentMonth = date.getMonth()+1; //month based off of 1-12
@@ -68,8 +68,14 @@ angular.module('velourApp').controller('calendarCtrl', function($scope, calendar
 	}
 		
 	viewMonthCalendar();
-	$scope.hideUpcomingShows = function(){
-		$scope.calendarToggle = false;
-	}
  
+ 	$scope.getBandInfo = function(artist){
+		// $rootScope.toggleUpcomingShowsTrue();
+		$state.go('velour.bandInfo',{
+			artist: artist
+		})
+
+
+
+	}
 })

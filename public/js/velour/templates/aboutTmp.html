@@ -1,9 +1,13 @@
-Sign Up for our Weekly News Letter!
+<div class="aboutWrapper"><p class="signUpHeader">Want a free concert ticket?</p>
+<br>
+<p class="signUpHeader2">Join our Weekly Newsletter!</p>
 
-<input ng-model ='email' placeholder = 'email'></input>
-<input ng-model ='name' placeholder = 'name'></input>
+<div class="emailSignUpContainer">
+	<input class ='emailFormInput' ng-model ='email' placeholder = 'email'></input>
+	<input ng-model ='name' class = 'emailFormInput' placeholder = 'name'></input>
+</div>
 
-<button ng-click = 'postEmail(email, name)'>sign-up</button>
+<button class='signUpButton'ng-click = 'postEmail(email, name)'><i class="fa fa-envelope-o"></i>&nbsp &nbsp sign-up</button>
 
 <br>
 <br>
@@ -12,3 +16,4 @@ Get Your Free Concert Ticket!
 <input ng-model = 'emailToVerify' placeholder="email"></input>
 <input ng-model = 'code' placeholder ="Verification Code"></input>
 <button ng-click='verifyEmail(emailToVerify, code)'>verify</button>
+</div>
