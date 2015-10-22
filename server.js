@@ -6,6 +6,9 @@ var express = 		require('express'),
  	cors = 			require('cors'),
  	mongoose = 		require('mongoose'),
 	AWS = require ('aws-sdk'),
+	expressSesh =	require('express-session'),
+	passport=		require('passport'),
+	localStrategy =	require('pasport-local').Strategy
  	port = 8008;
  
  var ImageController = require('./server/controllers/ImageController')

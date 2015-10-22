@@ -1,16 +1,17 @@
 <div class="adminTabBands">
-<div>
-	<button class='showButton' ng-click='toggleAddView()'>Add Show</button>
-	<button class='showButton' ng-click='toggleUpdateView(); findShow()'>Update Show</button>
-</div>
 
+<div>
+		<button class='showButton' ng-click='toggleAddView()'>Add Show</button>
+		<button class='showButton' ng-click='toggleUpdateView(); findShow()'>Update Show</button>
+	</div>
 <div ng-show ='showAdd' class="bandInput" >
+	
 
 		<div class='inputLine artistInput'>
 			<input ng-model="artist" placeholder='artist'></input>
 		</div>
 
-		<div class='inputLine'>
+		<div class='inputLine some'>
 				<select name="date" ng-model ='month' placeholder ='mo'>
     				<option value="" disabled selected>Mo</option>
 					<option value="1">1</option>
@@ -69,28 +70,49 @@
 					
 				</select>
 				
-		</div>
+		
 
-		<div class='inputLine time'>
-				<input ng-model="hour" placeholder='hr'></input>:
-				<input ng-model="minute" placeholder='mn'></input>
+		<span class='time'>-
+				<select ng-model="hour" placeholder='hr'>
+					<option value="" disabled selected>Hr</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>					
+					<option value="12">12</option>
+				</select>:
+				<select ng-model="minute" placeholder='mn'>
+					<option value="" disabled selected>Min</option>
+					<option value="0">00</option>
+					<option value="15">15</option>
+					<option value="30">30</option>
+					<option value="45">45</option>
+				</select>
+		</span>
 		</div>
 		
 		<div class='inputLine description'>
 			<textarea ng-model='description' placeholder='description(optional)'></textarea>
 		</div>
 		<div class="inputLine price" >
-		<input ng-model='price' placeholder="price"></input>
+			<input ng-model='price' placeholder="$"></input>
 		</div>
 		
-		<input type="file" images = 'images' fileread/>
+		<!--<input type="file" images = 'images' fileread/>-->
 		
 
 
 	</br>
 	
 	<button class = ' showButton addShowButton'ng-click ='addShow(artist, day, month, year,hour,minute,description,price)'>Submit</button>
-	<button ng-click='getImages()'>img	</button>
+	<!--<button ng-click='getImages()'>img	</button>-->
 	{{images}}
 </div>
 	<div class="updateShowPage" ng-show = 'showUpdateButton'>

@@ -44,6 +44,27 @@ table {
 }
 input:focus {outline:none;}
 button:focus {outline:none;}
+textarea:focus {outline:none;}
+
+input:focus {
+    border: 1px solid #4195fc; /* some kind of blue border */
+
+    /* other CSS styles */
+
+    /* round the corners */
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+
+
+    /* make it glow! */
+    -webkit-box-shadow: 0px 0px 4px #4195fc;
+       -moz-box-shadow: 0px 0px 4px #4195fc;
+            box-shadow: 0px 0px 4px #4195fc; /* some variation of blue for the shadow */
+
+}
+
+
 
 
 /*-----------------------------------------------------------------------------*/
@@ -79,7 +100,7 @@ body{
 	background:white;
 }
 .wrapper {
-	width:1200px;
+	width:50%;
 	margin:0 auto;
 
 }
@@ -100,12 +121,14 @@ header {
 	box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
 }
 
+
 .bandInput{
 	font-family: 'Oswald', sans-serif;
 	display: float;
 	width:400px;
 	margin-top: 20px;
-	color: #4d4d4d
+	color: #4d4d4d;
+	margin:0 auto;
 }
 .dateInput{width: 40px;}
 
@@ -117,8 +140,16 @@ header {
 	color: #232531;
 	font-size:20px;
 	height:50px;
+	border:1px solid #98A4B0;
+	border-radius:8px;
+	box-sizing: border-box
 
 }
+
+.some{
+	border:none;
+}
+
 .time >input {
 	width: 30px;
 }
@@ -133,10 +164,17 @@ header {
 
 }
 .price > input {
-	width:400px;
+	width:50px;
+	height:49px;
+	background:tranparent;
+}
+.artistInput{
+	margin-top:20px;
 }
 .artistInput > input {
 	width:400px;
+	height:50px;
+	background: transparent
 }
 
 .search{
@@ -144,6 +182,17 @@ header {
 	clear:both;
 	width: 100%;
 
+}
+.description{
+	width:400px;
+	height:300px;
+}
+
+.description > textarea{
+	width:400px;
+	height:280px;
+	border:none;
+	background: transparent;
 }
 
 .nav{
@@ -172,6 +221,8 @@ header {
 	background: mediumseagreen;
 	border-radius:8px;
 	color: white;
+	margin-top:10 px;
+	display:inline-block;
 }
 .searchBar {
 
@@ -259,6 +310,7 @@ header {
 	margin:0 auto;
 	background: #232531;
 	padding: 5px;
+	transition: 2s ease-in all;
 
 
 }
@@ -357,6 +409,13 @@ header {
 
 .updateShow > button {
 	margin-top:20px;
+}
+
+@media screen and (max-width:1400px){
+	.wrapper{
+		width:100%;
+		min-width: 650px;
+	}
 }
 
 /*-------------------------------------------band input---------------*/

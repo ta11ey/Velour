@@ -282,15 +282,33 @@ input:focus {outline:none; outline:0}
 	}
 	.artist_card{
 		text-align: center;
-		width:100%
+		width:100%;
+		font-size: 50px;
 	}
 	.description_card{
 		width:100%
 	}
 	.bandinfobody{
+		width:98%;
+		margin:0 auto;
+		margin-top:10%
+	}
+	.time_card{
+		font-size: 40px;
+	}
+	.date_card{
+		font-size: 30px;
+	}
+	.price_card{
+		font-size:25px;
+	}
+	
+	.description_card{
 		width:80%;
 		margin:0 auto;
+		margin-top:60px;
 	}
+	
 }
 
 .carousel{
