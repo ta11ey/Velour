@@ -273,8 +273,27 @@ input:focus {outline:none; outline:0}
 	.carousel {
 		width:100%
 	}
+	.mainInfo{
+		margin-top: 180px;
+		width:100%
+	}
+	.wrapper{
+		width:100%
+	}
+	.artist_card{
+		text-align: center;
+		width:100%
+	}
+	.description_card{
+		width:100%
+	}
+	.bandinfobody{
+		width:80%;
+		margin:0 auto;
+	}
 }
 
 .carousel{
 	float:right;
+	
 }

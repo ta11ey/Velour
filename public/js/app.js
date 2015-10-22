@@ -32,7 +32,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 				.state('velour.press', {
 					url: '/press',
 					templateUrl: 'js/velour/templates/pressTmp.html',
-					//controller: 'pressCtrl'
+					controller: 'photosCtrl'
 				})
 				.state('velour.store', {
 					url: '/store',

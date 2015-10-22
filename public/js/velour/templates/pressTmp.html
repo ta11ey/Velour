@@ -1,3 +1,8 @@
-Our Instagram Pics
 
-<div class="photos" ng-repeat = 'photo in photos'> {{photo}}</div>
+<div class="photosWrapper">
+	<div ng-repeat="item in instaFeed" class = 'instaImages'>
+		<a href="{{item.link}}" target="blank">
+			<img class="image-thumbnail" ng-src="{{item.images.low_resolution.url}}"/>
+		</a>
+	</div>
+</div>

@@ -1,3 +1,11 @@
 angular.module('velourApp').controller('photosCtrl', function($scope, photoService){
-	photoService.getPhotos();
+	$scope.getInstaFeed= function(){
+		photoService.getPhotos().then(function(res){
+			$scope.instaFeed = res.data.data
+
+			return res.data.data
+		})
+	}
+	
+	$scope.getInstaFeed()
 })
