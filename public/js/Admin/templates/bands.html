@@ -104,7 +104,7 @@
 		<div class="searchedShows" >
 			<a ng-click='deleteShow(show.id)'><i  class="fa fa-trash-o fa-2x"></i></a>
 			<div class = 'adminArtist'>{{show.artist}}</div>
-			<button ng-click='ngShowToggle()' class = 'updateArtist'>update</button>
+			<button ng-click='showUpdate = !showUpdate' class = 'updateArtist'>update</button>
 		</div>
 		
 			<div class="updateShow" ng-show ='showUpdate'>

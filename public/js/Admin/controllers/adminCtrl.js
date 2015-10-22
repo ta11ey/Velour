@@ -20,10 +20,7 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			}
 		}																			
 		$scope.showUpdate = false;
-		$scope.ngShowToggle = function(){
-			if (!$scope.showUpdate) $scope.showUpdate = true
-			else $scope.showUpdate = false
-		 };
+		
 		 
 		$scope.addShow = function(artist, day, month, year, hour, minute, description, price) {
 			var data = {
