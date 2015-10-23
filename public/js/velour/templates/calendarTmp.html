@@ -2,8 +2,10 @@
 <div class = 'wrapper'>
 		<div class="calendarHeader">	
 			<img class='arrowLeft' ng-click ='previousMonth()'src="../../media/arrowsleft.png" alt="">
-			<p>{{month}} </p>
-			<img  ng-click ='nextMonth()'src="../../media/arrows.png" alt="">
+			<div class="monthHeaderContainer">
+				<p>{{month}} </p>
+			</div>
+			<img  class = 'arrowRight'ng-click ='nextMonth()'src="../../media/arrows.png" alt="">
 		</div>
 	<div class="calendarBody">
 		<div class="weekdays">

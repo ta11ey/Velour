@@ -1,3 +1,6 @@
+body{
+	min-width:600px;
+}
 div{
 	color:white;;
 	font-family: 'Muli';
@@ -85,6 +88,7 @@ ul{
 	height:50vh;
 	float:left;
 	margin-bottom: 40px;
+	min-width:300px;
 
 }
 
@@ -213,54 +217,7 @@ P, h2{
 }
 
 /*------------------about-------------------*/
-.aboutWrapper{
-	width:100%;
-	padding:20px;
-}
-.emailFormInput{
-	background:transparent;
-	border-bottom: 1px solid tan;
-	width: 40%;
-	height:60px;
-	font-size:30px;
-	
-}
 
-.emailSignUpContainer{
-	margin:20px auto;
-}
-
-.signUpHeader{
-	font-family: 'Playfair Display', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size:5em;
-	margin-left:20px;
-	margin-top:20px;
-}
-.signUpHeader2{
-	font-family: 'Playfair Display', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size:3em;
-	margin-left:10%;
-	margin-top:20px;
-
-}
-.signUpButton{
-	width: 200px;
-	font-size:20px;
-	background:#FF6517;
-	border-bottom:4px solid #94090D;
-	border-right: 3px solid #94090D
-
-
-}
-.signUpButton:hover{
-	background:#FA5B0F
-}
-.signUpButton:active{
-	 transform: translateY(5px);
-}
-.fa-envelope-o {
-	margin-right:5px;
-}
 
 button:focus {outline:none; outline:0}
 input:focus {outline:none; outline:0}
@@ -270,7 +227,7 @@ input:focus {outline:none; outline:0}
 		width:100%
 		
 	}
-	.carousel {
+	.homeMain {
 		width:100%
 	}
 	.mainInfo{

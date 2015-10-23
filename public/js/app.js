@@ -24,14 +24,27 @@ app.config(function($stateProvider, $urlRouterProvider){
 					templateUrl: 'js/velour/templates/aboutTmp.html',
 					controller: 'aboutCtrl'
 				})
+					.state('velour.about.newsLetter', {
+						url: '/about/:id',
+						templateUrl: 'js/velour/templates/postTmp.html',
+						controller: 'newsLetterCtrl',
+						
+					})
+					
+				.state('velour.redeem', {
+					url: '/about',
+					templateUrl: 'js/velour/templates/redeemTmp.html',
+					controller: 'aboutCtrl'
+				})
+				
 				.state('velour.contact', {
 					url: '/contact',
 					templateUrl: 'js/velour/templates/contactTmp.html',
 					///controller: 'contactCtrl'
 				})
-				.state('velour.press', {
-					url: '/press',
-					templateUrl: 'js/velour/templates/pressTmp.html',
+				.state('velour.photos', {
+					url: '/photos',
+					templateUrl: 'js/velour/templates/photosTmp.html',
 					controller: 'photosCtrl'
 				})
 				.state('velour.store', {
@@ -49,23 +62,49 @@ app.config(function($stateProvider, $urlRouterProvider){
 						}
 					}
 				})
-
+				
+		.state('login',{
+			url: '/login',
+			templateUrl: 'js/Admin/templates/login.html',
+			controller: 'authCtrl'
+		})
 		.state('admin', {
 			url: '/admin',
 			templateUrl: 'js/Admin/admin.html',
-			controller: 'adminCtrl'
+			controller: 'adminCtrl',
+			resolve: {
+				isAuthed: function(authService){
+
+					return authService.authorized().then(function(res){return res})
+				}
+			}
 			})
 				.state('admin.bands', {
 					url: '/bands',
 					templateUrl: 'js/Admin/templates/bands.html',
+					resolve: {
+						isAuthed: function(authService){
+							return authService.authorized().then(function(res){return res})
+						}
+					}
 				})
 				.state('admin.emails', {
 					url: '/emails',
 					templateUrl: 'js/Admin/templates/emails.html',
+					resolve: {
+						isAuthed: function(authService){
+							return authService.authorized().then(function(res){return res})
+						}
+					}					
 				})
 				.state('admin.newsletter', {
 					url: '/newsletter',
 					templateUrl: 'js/Admin/templates/newsletter.html',
+					resolve: {
+						isAuthed: function(authService){
+							return authService.authorized().then(function(res){return res})
+						}
+					}					
 				})
 		
 				

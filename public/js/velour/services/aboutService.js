@@ -66,6 +66,15 @@ angular.module('velourApp').service('aboutService', function($http){
 			method: 'GET',
 			url: url + '/verifyemail/'+email
 		})
+	};
+	
+	this.getPosts = function(email){
+		return $http({
+			method:'GET',
+			url: url + '/getPosts'
+		}).then(function(res){
+			return res.data
+		})
 	}
 	
 })

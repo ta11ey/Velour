@@ -1,20 +1,44 @@
 
-<div class="aboutWrapper"><p class="signUpHeader">Want a free concert ticket?</p>
-<br>
-<p class="signUpHeader2">Join our Weekly Newsletter!</p>
 
-<div class="emailSignUpContainer">
-	<input class ='emailFormInput' ng-model ='email' placeholder = 'email'></input>
-	<input ng-model ='name' class = 'emailFormInput' placeholder = 'name'></input>
-</div>
+<div class="newsBody">
+	<div class="emailThanks" ng-show='emailThanks'>
+			<p>Thanks for Signing up, You will be receiving a redemption code soon!</br> make sure to come back and claim your free ticket!</p>
+		</div>
+	<div class="newsletterSignUp" ng-show = 'SignUpToggle'>
+		<div class="newsLetterAdv">
+			<p>Subscribe to our weekly newsletter and receive one free concert ticket!</p>
+		</div>
+		<div class="emailAlert" ng-show='validEmail'>
+			<p>Please enter a valid E-mail</p>
+		</div>
+		<div class="emailAlert" ng-show='emailExists'>
+			<p>We're sorry, that email has already signed up</p>
+		</div>
+		
+		
+		<div class="emailCard">
+			<input class ='emailFormInput' ng-model ='email' placeholder = 'EMAIL'></input>
+			<input ng-model ='name' class = 'emailFormInput' placeholder = 'NAME'></input>
+			<button class='signUpButton'ng-click = 'postEmail(email, name)'><i class="fa fa-envelope-o"></i>&nbsp &nbsp sign-up</button>
+			<div class="claimFreeTicket"><a ui-sref='velour.redeem'>&nbsp &nbspClaim Free Ticket</a></div>
+		</div>
 
-<button class='signUpButton'ng-click = 'postEmail(email, name)'><i class="fa fa-envelope-o"></i>&nbsp &nbsp sign-up</button>
-
-<br>
-<br>
-
-Get Your Free Concert Ticket!
-<input ng-model = 'emailToVerify' placeholder="email"></input>
-<input ng-model = 'code' placeholder ="Verification Code"></input>
-<button ng-click='verifyEmail(emailToVerify, code)'>verify</button>
+	</div>
+	
+	
+	<div class="newsLetterBody">
+		<aside>
+			<p>Recent Articles</p>
+				<div class="posts">
+				<div class ='postTitle'ng-repeat = 'post in newsLetter' ><a ng-click='goToPost(post._id)'>{{post.title}}</a></div>
+				</div>
+			
+		</aside>
+		<div class="newsLetterContent">
+			<ui-view></ui-view>
+		</div>
+	</div>
+	
+	
+	
 </div>

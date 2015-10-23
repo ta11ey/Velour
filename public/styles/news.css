@@ -1,0 +1,95 @@
+.newsBody{
+	width:100%;
+
+}
+.emailAlert{
+	color:red;
+	text-align: center;
+}
+.emailThanks{
+	margin-top:10px;
+	color:lightseagreen;
+	text-align:center;
+}
+
+.newsletterSignUp{
+	position:relative;
+}
+.claimFreeTicket{
+	position:absolute;
+	bottom:5px;
+
+	color:tan;
+	font-size:10px;
+}
+.newsLetterAdv{
+	width:100%;
+	text-align: center;
+	height:30px;
+	margin-top:40px;
+color: tan;
+}
+
+.emailCard{
+	margin:0 auto;
+	width:1000px;
+	height:100px;
+	background:none;
+	border:1px solid tan;
+	border-radius: 8px;
+	margin-top:10px;
+}
+
+.emailFormInput{
+	width:400px;
+	height:80px;
+	margin-top:10px;
+	margin-left:10px;
+	font-size: 30px;
+	background:transparent;
+
+}
+
+.signUpButton {
+	width:150px;
+	background: #bdae85;
+	font-size: 20px;
+}
+
+.verifyButton{
+	height:60px;
+	width:150px;
+	background:#bdae85;
+	font-size: 20px;
+}
+::-webkit-input-placeholder {
+    color: lightgray;
+    opacity: .4 !important; /* for chrome */
+}
+
+aside > p{
+	float:left;
+
+}
+aside{
+	float:left;
+	width:10%;
+	border-right:1px solid tan;
+	min-height: 50vh;
+}
+
+.newsLetterBody{
+	width:80%;
+	margin:30px auto;
+	
+}
+.postTitle{
+	float:right;
+	clear:both;
+
+}
+
+.posts{
+	margin-right:10px;
+	margin-top:20px;
+}

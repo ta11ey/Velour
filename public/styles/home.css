@@ -26,6 +26,7 @@ nav > ul {
 
 .provobest, .liveMusic, .venue {
 	margin-left: 30px;
+	margin-top:10px;
 }
 
 .homeInfo{
@@ -52,7 +53,10 @@ nav > ul {
 .fa {
 	margin:20px 0;
 }
-
+.homeMain{
+	width:75%;
+	float:right;
+}
 /*----------pane 2-------------*/
     
 .openMicPart {
@@ -79,7 +83,7 @@ nav > ul {
 
 /*----- carousel------*/
 
-.panes > li {
+/*.panes > li {
 
 
 	position:relative;
@@ -87,9 +91,6 @@ nav > ul {
     width:20%;
 }
 
-.d2{
-    background:red;
-}
 
 .carousel{
 	width: 75%;
@@ -101,8 +102,8 @@ nav > ul {
 .panes{
     list-style:none;
     position:relative;
-    width:500%; /* Number of panes * 100% */
-    overflow:hidden; /* This is used solely to clear floats, it does not add functionality. */
+    width:500%;
+    overflow:hidden;
         
     -moz-animation:carousel 60s infinite;
     -webkit-animation:carousel 60s infinite;
@@ -131,4 +132,4 @@ ul{
     87.5% { left:-300%; }
     98.5% { left:-300%; }
     100%  { left:0; }
-}
+}*/
