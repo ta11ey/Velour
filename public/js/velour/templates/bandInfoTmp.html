@@ -2,18 +2,25 @@
 	 <upcoming-shows></upcoming-shows>
 </div>
 
+<div class="bandInfoWrapper">
 <div class="bandinfobody">
-	<div class="artist_card">{{bandInfoShows.artist.toUpperCase()}}</div>
-	<div class="time_card">
-		<span>{{bandInfoShows.weekday}}&nbsp</span><span>{{bandInfoShows.time.hour}}:{{bandInfoShows.time.minute}}</span>
+	
+	<div class="bandInfoHeader">
+		<div class="artist_card">{{bandInfoShows.artist.toUpperCase()}}</div>
 	</div>
-	<div class="date_card">
-		<span>{{bandInfoShows.date.month}}/</span><span>{{bandInfoShows.date.day}}/</span><span>{{bandInfoShows.date.year}}</span>
+	
+	<div class="bandInfoBody">
+		<div class="time_card">
+			<span>{{bandInfoShows.weekday}}&nbsp</span><span>{{bandInfoShows.time.hour}}:{{bandInfoShows.time.minute}}</span>
+		</div>
+		<div class="date_card">
+			<span>{{bandInfoShows.date.month}}/</span><span>{{bandInfoShows.date.day}}/</span><span>{{bandInfoShows.date.year}}</span>
+		</div>
+		<div class="price_card">
+			${{bandInfoShows.ticketPrice}}
+		</div>
+		<div class="description_card">{{bandInfoShows.description}}</div>
 	</div>
-	<div class="price_card">
-		${{bandInfoShows.ticketPrice}}
-	</div>
-	<div class="description_card">{{bandInfoShows.description}}</div>
-	<!--{{test}}-->
+</div>
 </div>
 

@@ -8,7 +8,7 @@ var express = 		require('express'),
 	AWS = 			require ('aws-sdk'),
 	expressSesh =	require('express-session'),
 	passport=		require('passport'),
-	LocalStrategy =	require('passport-local').Strategy
+	LocalStrategy =	require('passport-local').Strategy,
  	port = 8008;
  
  
@@ -105,6 +105,10 @@ app.post(   '/images',      	ImageController.create)
 
 app.get(	'/getPosts',		PostController.read)
 app.post(   '/postPost',      	PostController.create)
+app.get(	'/getArticle/:_id',	PostController.get)
+app.delete( '/post/:id',      	PostController.delete)
+
+
 
 app.post(	'/createUser',		AuthController.create)
 app.get(	'/checkUser/:id',	AuthController.checkUser)

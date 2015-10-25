@@ -20,23 +20,27 @@
 			<input class ='emailFormInput' ng-model ='email' placeholder = 'EMAIL'></input>
 			<input ng-model ='name' class = 'emailFormInput' placeholder = 'NAME'></input>
 			<button class='signUpButton'ng-click = 'postEmail(email, name)'><i class="fa fa-envelope-o"></i>&nbsp &nbsp sign-up</button>
-			<div class="claimFreeTicket"><a ui-sref='velour.redeem'>&nbsp &nbspClaim Free Ticket</a></div>
+			<div class="claimFreeTicket"><a ng-class="{active:$state.includes('redeem')}" ui-sref='velour.redeem'>&nbsp &nbspClaim Free Ticket</a></div>
 		</div>
 
 	</div>
 	
 	
 	<div class="newsLetterBody">
+	<div class="newsLetterContent">
 		<aside>
 			<p>Recent Articles</p>
 				<div class="posts">
-				<div class ='postTitle'ng-repeat = 'post in newsLetter' ><a ng-click='goToPost(post._id)'>{{post.title}}</a></div>
+				<div class ='postTitle' ng-repeat = 'post in newsLetter'>
+					<a ng-click='goToPost(post._id)'ng-class="{activeTitle: isActive('/about/newsletter/{{post._id}}')}">{{post.title.toUpperCase()}}</a>
+				</div>
 				</div>
 			
 		</aside>
 		<div class="newsLetterContent">
 			<ui-view></ui-view>
 		</div>
+	</div>
 	</div>
 	
 	

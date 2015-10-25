@@ -63,12 +63,15 @@ color: tan;
 	font-size: 20px;
 }
 ::-webkit-input-placeholder {
-    color: lightgray;
-    opacity: .4 !important; /* for chrome */
+    color: gray;
+    opacity: .8 !important; /* for chrome */
 }
 
 aside > p{
-	float:left;
+	float: right;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
 
 }
 aside{
@@ -79,17 +82,51 @@ aside{
 }
 
 .newsLetterBody{
-	width:80%;
+	width:100%;
 	margin:30px auto;
 	
+}
+.newsLetterContent{
+	width:80%;
+	margin:0 auto;
+
 }
 .postTitle{
 	float:right;
 	clear:both;
+	margin:5px auto;
+	cursor: pointer;
+	text-align: right;
+}
 
+.postTitle:hover{
+	color:tan;
 }
 
 .posts{
 	margin-right:10px;
 	margin-top:20px;
+}
+
+.activeTitle{
+	color:tan;
+}
+/****************************post body*********************/
+
+.postBody{
+	width:100%;
+	margin:20px;
+}
+.postHeader{
+	font-size:8em;
+}
+.postsubTitle{
+	font-size:4em;
+	margin:15px auto;
+	padding-bottom:20px;
+	border-bottom:1px solid tan;
+}
+.postPost{
+	font-size:2em;
+	width:100%;
 }

@@ -1,27 +1,44 @@
 .bandinfobody{
-	padding:10px;
-	width:70%;
-	float:left;
+	margin-top: 10px;
+    width: 40%;
+    float: left;
+    border: 1px solid #bdae85;
+    border-radius: 10px;
 
 
 }
 .artist_card{
-	font-size:40px;
-	border-bottom:1px solid tan;
-	display:inline-block;
-	width: 80%;
-	margin-bottom:10px;
+	margin-left:10px;
+	margin-top:10px;
 }
 
+.bandInfoHeader{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	font-size:40px;
+	border-bottom:3px solid #bdae85;
+	display:inline-block;
+	width: 100%;
+	margin-bottom:10px;
+	background: #260d13;
+	height:60px;
+}
+
+
 .time_card, .date_card, price_card {
-	margin:5px 0;
+	font-size:1.5em;
+	margin:5px 10px;
 }
 
 .price_card{
 	margin-bottom:20px;
+	margin-left:10px;
 }
 
 .description_card{
+	margin-bottom:20px;
+	margin-left:10px;
+	font-size: 1.2em;
 	width:50%;
 	font-size:20px;
 }

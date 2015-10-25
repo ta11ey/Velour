@@ -1,0 +1,76 @@
+
+<div class = 'adminTabNewsletter'>
+	
+	<div class="newsletterButtons">
+		<button class='showButton' ng-click='toggleAddPostView()'>Add Post</button>
+		<button class='showButton' ng-click='toggleUpdatePostView(); getPosts()'>Update Post</button>
+	</div>
+	
+	<div class="addPostBody" ng-show = 'addPostView'>
+		<div class="newsletterInputBody" >
+			<input type="text" ng-model='data.title'class="newsletterTitle" placeholder="Title*">
+			<input type="text" ng-model = 'data.subtitle' class="newsletterSubTitle"placeholder="Subtitle">
+			<div class="date" > {{currentDate}}</div>
+			<div class="newsLetterPhoto" >
+
+			</div>
+			<textarea ui-tinymce style="float:left" class="newsletterPost" placeholder="Enter Post*"ng-model='data.post'></textarea>
+
+			
+			
+		</div>
+
+
+		<button class='showButton newsletterSubmitButton' ng-click='addPost(data)'>Submit</button>
+	</div>
+
+	<div class="updateNewsLetter" ng-show = 'updatePostView'>
+		<div class="searchBar">
+			FILTER: <input ng-model='search'></input>
+		</div>
+		
+		<!--<div class="adminShowsCard" ng-repeat='post in newsletter|filter: {title:search}''>
+			<div class="searchesShows">
+				<a ng-click='deletePost(show.id)'><i  class="fa fa-trash-o fa-2x"></i></a>
+				<div class = 'adminArtist adminPostTitle'>{{post.title}}</div>
+				<button ng-click='postUpdate = !postUpdate' class = 'updateArtist'>update</button>
+			</div>-->
+		<div class="adminShowsCard" ng-repeat = 'post in newsletter |filter: {title:search}'>
+			<div class="searchedShows" >
+				<a ng-click='deletePost(post._id); getPosts()'><i  class="fa fa-trash-o fa-2x"></i></a>
+				<div class = 'adminArtist'>{{post.title}}</div>
+				<button ng-click='showUpdate = !showUpdate' class = 'updateArtist'>update</button>
+			</div>
+		
+			<div class="updateShow" ng-show ='showUpdate'>
+				<div class="updatedArtistInput">
+					 <input ng-model = 'updatedArtist.artist' placeholder = '{{show.artist}}'></input>
+				</div>
+				<div class="updatedDateInput">
+					<input ng-model = 'updatedArtist.date.month' class = 'updatedDateInput1'placeholder = '{{show.date.month}}'></input>
+					/<input ng-model = 'updatedArtist.date.day' placeholder = '{{show.date.day}}'></input>
+					/<input ng-model = 'updatedArtist.date.year' placeholder = '{{show.date.year}}'></input>
+				</div>
+				<div class="updatedTimeInput">
+					<input ng-model = 'updatedArtist.time.hour' class = 'updatedTimeInput1'placeholder = '{{show.time.hour}}'></input>
+					:<input ng-model = 'updatedArtist.time.minute' placeholder = '{{show.time.minute}}'></input>
+				</div>
+				<div class="updatedPriceInput">
+					$<input ng-model = 'updatedArtist.ticketPrice' placeholder="{{show.price}}"></input>
+				</div>
+				<div class="updatedDesInput">
+					<input ng-model = 'updatedArtist.description' placeholder = '{{show.description}}'></input>
+				</div>
+				
+				<button class = 'showButton'ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>Submit</button>
+			</div>
+		</div>
+			
+			
+			
+			
+		</div>
+		
+	</div>
+</div>
+

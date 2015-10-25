@@ -314,6 +314,19 @@ header {
 
 
 }
+.newsLetterRepeat{
+	float:left;
+}
+
+.updatePost{
+	float:left;
+	height:250px;
+	width:100%;
+	margin:0 auto;
+	background: #232531;
+	padding: 5px;
+	transition: 2s ease-in all;
+}
 
 .updatedArtistInput{
 	 margin-left:60px;
@@ -418,4 +431,68 @@ header {
 	}
 }
 
-/*-------------------------------------------band input---------------*/
+/*-------------------------------------------newsletter input---------------*/
+
+.newsletterInputBody{
+
+	color: #232531
+}
+
+.newsletterTitle{
+	float:left;
+	clear:both;
+	width:400px;
+	height:50px;
+	border:1px solid gray;
+	border-radius: 8px;
+	margin-top:20px;
+	font-size:20px;
+}
+
+.newsletterSubTitle{
+	float:left;
+	clear:both;
+	width:400px;
+	height:50px;
+	border:1px solid gray;
+	border-radius: 8px;
+	margin-top:20px;
+	font-size:20px;
+}
+
+.newsletterPost{
+	float:left;
+	clear:both;
+	border:1px solid gray;
+	border-radius: 8px;
+	width:100%;
+	height:25vh;
+	margin-top:20px;
+	font-size:18px;
+	float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.newsletterSubmitButton{
+	margin-top:20px;
+	float:left;
+	clear:both;
+}
+
+.mce-tinymce{
+	float:left;
+	margin-top:20px;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.backHome{
+	font-size: 1.5em;
+	color: white;
+	position:absolute;
+	top:5px;
+	left:5px;
+}

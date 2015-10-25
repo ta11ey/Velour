@@ -1,4 +1,4 @@
-var app = angular.module('velourApp', ['ui.router']);
+var app = angular.module('velourApp', ['ui.router','ui.tinymce']);
 
 app.config(function($stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('/home/main')
@@ -25,10 +25,14 @@ app.config(function($stateProvider, $urlRouterProvider){
 					controller: 'aboutCtrl'
 				})
 					.state('velour.about.newsLetter', {
-						url: '/about/:id',
+						url: '/newsletter/:_id',
 						templateUrl: 'js/velour/templates/postTmp.html',
 						controller: 'newsLetterCtrl',
-						
+						resolve: {
+							getArticle: function($stateParams, newsLetterService){
+								return newsLetterService.getArticle($stateParams._id)
+							}
+						}
 					})
 					
 				.state('velour.redeem', {
@@ -190,3 +194,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 	
 })
 
+.filter('unsafe', function($sce) { 
+		return $sce.trustAsHtml
+});

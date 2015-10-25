@@ -92,7 +92,7 @@
 	
 	this.getImages = function() {
         return $http.get('/images')
-    }
+    };
 	
 	this.uploadImage = function(fileBody, fileObj){
 		
@@ -108,5 +108,28 @@
 			data: fileObj
 		})
 		
-	}
+	};
+	
+	this.addPost = function(data){
+		return $http({
+			method: 'POST',
+			url: url + '/postPost',
+			data: data
+			})
+	};
+	
+	this.getPosts = function(){
+		return $http({
+			method:'GET',
+			url: url + '/getPosts'
+		})
+	};
+	
+	this.deletePost = function(_id){
+		$http({
+			method:'DELETE',
+			url: url + '/post/' +_id
+		}).then(function(){console.log('deleted')})
+	};
+	
 })

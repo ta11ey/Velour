@@ -1,8 +1,8 @@
 angular.module('velourApp').controller('adminCtrl',function($scope, adminService, $location){
 		
 		$scope.isActive = function(route) {
-        						return route === $location.path();
-							}
+        	return route === $location.path();
+		}
 		$scope.showAdd = true;
 		$scope.showUpdateButton = false;
 		
@@ -18,7 +18,13 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 				$scope.showUpdateButton = false;
 				$scope.showAdd = true;
 			}
-		}																			
+		}
+/**************************************************** */	
+
+
+		$scope.clearBandForm = function(a,b,c,d,e,f,g,h){
+			$scope.artist = "";
+		}																		
 		$scope.showUpdate = false;
 		
 		 
@@ -26,12 +32,12 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			var data = {
 				"artist": 	artist,
 				"date":{
-						"day":day,
+						"day":	day,
 						"month":month,
-						"year":year
+						"year":	year
 				},
 				"time":{
-						"hour":hour,
+						"hour":	hour,
 						"minute":minute
 				},
 				"description":description,
@@ -39,6 +45,8 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			};
 				
 			adminService.addShow(data).then(function(response) {
+				$scope.toggleUpdateView();
+				$scope.findShow();
 				console.log('succesfully added to database!')
 			});
 		};
@@ -57,20 +65,64 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 			adminService.updateShow(id, data)
 		}
 		
+/**************************************************** */
 		$scope.getEmails= function(){
 			adminService.getEmails().then(function(res){
 				$scope.emails=res
 			})
 		}
+		$scope.getEmails();
 		
 		$scope.deleteEmail =function(email){
-			adminService.deleteEmail(email);
+			adminService.deleteEmail(email).then(function(){$scope.getEmails()});
 		}
-		
+/**************************************************** */
 		$scope.getImages = function(){
 			adminService.getImages().then(function(res){
 				$scope.images = res.data;
 				console.log(res)
 			})
 		}
+
+/****************************newsLetter************************ */
+		
+		$scope.addPostView = true;
+		$scope.updatePostView = false;
+		
+		$scope.toggleAddPostView = function(){
+			$scope.addPostView = true;
+			$scope.updatePostView = false;
+		};
+		
+		$scope.toggleUpdatePostView = function(){
+			$scope.addPostView = false;
+			$scope.updatePostView = true;			
+		}
+		
+		
+		
+		$scope.getPosts= function(){
+			adminService.getPosts().then(function(res){
+				$scope.newsletter=res.data
+			})
+		}
+		
+		$scope.deletePost =function(id){
+			console.log('ctrl delete hit')
+			adminService.deletePost(id)
+		}
+		
+		$scope.addPost = function(data) {
+			// var data = {
+			// 	"title": 	title,
+			// 	"subtitle": subtitle,
+			// 	"date": 	date,
+			// 	"post":		post
+			// };
+				
+			adminService.addPost(data).then(function(response) {
+				$scope.toggleUpdatePostView()
+				console.log('succesfully added to database!')
+			});
+		};
 })

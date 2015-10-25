@@ -123,11 +123,11 @@
 		</div>
 		
 		<div class="adminShowsCard" ng-repeat = 'show in shows |filter: {artist:search}'>
-		<div class="searchedShows" >
-			<a ng-click='deleteShow(show.id)'><i  class="fa fa-trash-o fa-2x"></i></a>
-			<div class = 'adminArtist'>{{show.artist}}</div>
-			<button ng-click='showUpdate = !showUpdate' class = 'updateArtist'>update</button>
-		</div>
+			<div class="searchedShows" >
+				<a ng-click='deleteShow(show.id); findShow()'><i  class="fa fa-trash-o fa-2x"></i></a>
+				<div class = 'adminArtist'>{{show.artist}}</div>
+				<button ng-click='showUpdate = !showUpdate' class = 'updateArtist'>update</button>
+			</div>
 		
 			<div class="updateShow" ng-show ='showUpdate'>
 				<div class="updatedArtistInput">
@@ -151,7 +151,7 @@
 				
 				<button class = 'showButton'ng-click='showUpdate = false;  updateShow(show.id, updatedArtist)'>Submit</button>
 			</div>
-		<div>
+		</div>
 </div>
 
 </div>

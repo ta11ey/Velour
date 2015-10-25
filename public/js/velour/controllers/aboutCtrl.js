@@ -1,4 +1,10 @@
-angular.module('velourApp').controller('aboutCtrl', function($scope, aboutService, $timeout, $state){
+angular.module('velourApp').controller('aboutCtrl', function($scope, aboutService, $timeout, $state, $location){
+	
+	$scope.isActive = function(route) {
+		var newroute = '/home'+route;
+        return newroute === $location.path();
+		
+	}
 	
 	$scope.SignUpToggle = true;
 	$scope.newsLetterSignUpToggle = function(){
@@ -66,9 +72,9 @@ angular.module('velourApp').controller('aboutCtrl', function($scope, aboutServic
 	
 	$scope.getPosts();
 	
-	$scope.goToPost = function(id){
+	$scope.goToPost = function(_id){
 		$state.go('velour.about.newsLetter',{
-			id: id
+			_id: _id
 		})
 	}
 								

@@ -12,6 +12,7 @@ body{
 .basicContact{
 	text-align: center;
 	color:#bdae85;
+	margin-top:5px;
 }
 .logo{
 	height:170px;
@@ -243,12 +244,17 @@ input:focus {outline:none; outline:0}
 		font-size: 50px;
 	}
 	.description_card{
-		width:100%
+		width:100%;
+		margin-bottom:20px;
+	}
+	.bandInfoWrapper{
+		width:100%;
+
 	}
 	.bandinfobody{
-		width:98%;
-		margin:0 auto;
-		margin-top:10%
+		width:90%;
+		margin-top:10%;
+		margin-bottom:10px;
 	}
 	.time_card{
 		font-size: 40px;
@@ -265,6 +271,7 @@ input:focus {outline:none; outline:0}
 		margin:0 auto;
 		margin-top:60px;
 	}
+	
 	
 }
 
