@@ -5,11 +5,11 @@ var express = 		require('express'),
  	bodyParser = 	require('body-parser'),
  	cors = 			require('cors'),
  	mongoose = 		require('mongoose'),
-	AWS = 			require ('aws-sdk'),
+	AWS = 			require('aws-sdk'),
 	expressSesh =	require('express-session'),
 	passport=		require('passport'),
 	LocalStrategy =	require('passport-local').Strategy,
- 	port = 8008;
+ 	port = 8080;
  
  
  var ImageController = require('./server/controllers/ImageController')
