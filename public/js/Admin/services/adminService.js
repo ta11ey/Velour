@@ -84,7 +84,7 @@
 	};
 	
 	this.deleteEmail = function(id){
-		$http({
+		return $http({
 			method:'DELETE',
 			url: url + '/email/' +id
 		})

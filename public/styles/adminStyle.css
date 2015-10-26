@@ -94,10 +94,10 @@ input:focus {
 	-webkit-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
 	-moz-box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
 	box-shadow: 4px 5px 13px -4px rgba(0,0,0,0.75);
-	color:white;
+	color:#f7f7f7;
 }
 body{
-	background:white;
+	background:#f7f7f7;
 }
 .wrapper {
 	width:50%;
@@ -106,7 +106,7 @@ body{
 }
 
 .velourAdmin {
-	color:white;
+	color:#f7f7f7;
 	font-size: 80px;
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
@@ -220,7 +220,7 @@ header {
 	width: 150px;
 	background: mediumseagreen;
 	border-radius:8px;
-	color: white;
+	color: #f7f7f7;
 	margin-top:10 px;
 	display:inline-block;
 }
@@ -245,7 +245,7 @@ header {
 	height:90px;
 	text-align: center;
 	margin: 5px 0;
-	color: white;
+	color: #f7f7f7;
 	-webkit-box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
 	-moz-box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
 	box-shadow: 4px 5px 39px -9px rgba(0,0,0,0.75);
@@ -256,7 +256,7 @@ header {
 	float:left;
 	width: 40px;height:40px;
 	background: red;
-	color:white;
+	color:#f7f7f7;
 	margin-left:10px;
 	border-radius:10px;
 	padding-top:3px;
@@ -282,7 +282,7 @@ header {
 .adminArtist{
 	float:left;
 	font-size:40px;
-	color:white;
+	color:#f7f7f7;
 	margin-top:20px;
 	margin-left:20px;
 }
@@ -491,7 +491,7 @@ header {
 
 .backHome{
 	font-size: 1.5em;
-	color: white;
+	color: #f7f7f7;
 	position:absolute;
 	top:5px;
 	left:5px;

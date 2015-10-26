@@ -12,6 +12,9 @@ angular.module('velourApp').controller('aboutCtrl', function($scope, aboutServic
 		return
 	}
 	
+	$scope.goToRedeem = function(){
+		$state.go('velour.redeem')
+	}
 	
 	$scope.postEmail = function(email, name){
 		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;						
@@ -22,6 +25,9 @@ angular.module('velourApp').controller('aboutCtrl', function($scope, aboutServic
 			aboutService.verifyEmail(email).then(function(res){
 				if(res.data){
 					$scope.validEmail =false;
+					
+					
+					
 					$scope.emailExists = true;
 				}
 				else{
@@ -42,31 +48,34 @@ angular.module('velourApp').controller('aboutCtrl', function($scope, aboutServic
 	};
 	
 	$scope.verifyEmail = function(email, code){
-		aboutService.getEmail(email).then(function(res){
-			console.log(res)
-			if (res.data[0].code === code){
-				aboutService.freeTicketEmail(email);
-			}
-			else {
-				console.log("the code didn't match")
-			}
-		})		
+		aboutService.verifyEmail(email).then(function(res){
+				if(res.data){
+					aboutService.getEmail(email).then(function(result){
+						if (result === code){
+							aboutService.freeTicketEmail(email);
+						}
+						else {
+						$scope.noEmailExists = true;
+						$timeout(function(){$scope.noEmailExists = false}, 3000)
+						}
+					})
+				}
+				else{
+					$scope.noEmailExists = true;
+						$timeout(function(){$scope.noEmailExists = false}, 3000)}
+		})
+		
+				
 	};
-	
-	$scope.newsLetter = [
-		{title:'yo'},
-		{title:'yo'}
-	]
 	
 	$scope.getPosts = function(){
 		aboutService.getPosts().then(function(res){
-
 			var resortedRes = [];
 			for (var i = res.length-1; i >= 0; i--){
 				resortedRes.push(res[i])
 			}
-			$scope.newsLetter = resortedRes
-			console.log($scope.newsLetter)
+			$scope.newsLetter = resortedRes;
+			$scope.goToPost($scope.newsLetter[0]._id)
 		})
 	}
 	
@@ -77,5 +86,7 @@ angular.module('velourApp').controller('aboutCtrl', function($scope, aboutServic
 			_id: _id
 		})
 	}
+	
+
 								
 })

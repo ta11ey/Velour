@@ -6,7 +6,7 @@
 		</div>
 	<div class="newsletterSignUp" ng-show = 'SignUpToggle'>
 		<div class="newsLetterAdv">
-			<p>Subscribe to our weekly newsletter and receive one free concert ticket!</p>
+			<p>Subscribe to our weekly newsletter and receive a free concert ticket!</p>
 		</div>
 		<div class="emailAlert" ng-show='validEmail'>
 			<p>Please enter a valid E-mail</p>
@@ -16,11 +16,11 @@
 		</div>
 		
 		
-		<div class="emailCard">
+		<div class="emailCard emailSignUpCard">
 			<input class ='emailFormInput' ng-model ='email' placeholder = 'EMAIL'></input>
 			<input ng-model ='name' class = 'emailFormInput' placeholder = 'NAME'></input>
 			<button class='signUpButton'ng-click = 'postEmail(email, name)'><i class="fa fa-envelope-o"></i>&nbsp &nbsp sign-up</button>
-			<div class="claimFreeTicket"><a ng-class="{active:$state.includes('redeem')}" ui-sref='velour.redeem'>&nbsp &nbspClaim Free Ticket</a></div>
+			<div class="claimFreeTicket"><a ng-click='goToRedeem()'>&nbsp &nbspClaim Free Ticket</a></div>
 		</div>
 
 	</div>

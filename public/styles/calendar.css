@@ -22,16 +22,27 @@
 	height:200px;
 	float:left;
 	padding:4px;
-
 	box-sizing: border-box;
 	margin:8px 10px;
 	background:rgba(189,174,133, 0.8);
 	-webkit-box-shadow:  6px 6px 0px rgba(0,0,0.2);
 -moz-box-shadow:  6px 6px 0px rgba(0,0,0,0.2);
 box-shadow:  5px 5px 0px rgba(189,174,133,0.3);
+	transition: .5s	ease all;
+}
+
+.day:hover{
+	transform: translateY(5px);
+	box-shadow: none;
+	color: rgb(38,13,19)
+}
+.calendarArtistList:hover{
+	cursor: pointer;
+	color:rgb(38,13,19);
+		transition: .5s	ease all;
 }
 .calendarButton {
-		background-color: rgba(188, 24,21, .3);
+		background-color: rgba(188, 24,21, .4);
 		margin: 0;
 		padding: 0;
 		border: none;
@@ -42,12 +53,14 @@ box-shadow:  5px 5px 0px rgba(189,174,133,0.3);
 
 .arrowLeft{
 	position:absolute;
-	left:0
+	left:0;
+	cursor: pointer
 }
 .arrowRight{
 	position: absolute;
 	right:0;
 	top:0;
+	cursor: pointer;
 }
 
 .calendarHeader{

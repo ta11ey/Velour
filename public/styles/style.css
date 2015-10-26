@@ -14,9 +14,7 @@ body{
 	color:#bdae85;
 	margin-top:5px;
 }
-.logo{
-	height:170px;
-}
+
 .logo > img{
 	width: 100%;
 	
@@ -43,6 +41,7 @@ ul{
 .homeli{
 	flex:1;
 	text-align: center;
+	font-size:1.5em;
 }
 
 /*------------content------------*/
@@ -90,7 +89,7 @@ ul{
 	float:left;
 	margin-bottom: 40px;
 	min-width:300px;
-
+	margin-top: 10px;
 }
 
 .artist {
@@ -223,16 +222,25 @@ P, h2{
 button:focus {outline:none; outline:0}
 input:focus {outline:none; outline:0}
 
-@media screen and (max-width: 1100px){
-	.upcomingShows{
-		width:100%
+@media screen and (max-width: 1200px){
+	.newsletterSignUp{
+		display:none;
+	}
+	.emailSignUpCard{
+		display:none;
+	}
+	.homeUpcoming{
+		display:none;
 		
+	}
+	.upcomingShows{
+		width:100%;
 	}
 	.homeMain {
 		width:100%
 	}
 	.mainInfo{
-		margin-top: 180px;
+
 		width:100%
 	}
 	.wrapper{
@@ -252,7 +260,7 @@ input:focus {outline:none; outline:0}
 
 	}
 	.bandinfobody{
-		width:90%;
+		width:100%;
 		margin-top:10%;
 		margin-bottom:10px;
 	}
@@ -272,10 +280,22 @@ input:focus {outline:none; outline:0}
 		margin-top:60px;
 	}
 	
+	.homeInfo{
+		flex-direction: column;
+		width:60%;
+		margin:0 auto;
+		font-size:1.7em;
+	}
+	.homeInfo >div{
+		margin:20px auto;
+	}
 	
 }
 
 .carousel{
 	float:right;
 	
+}
+a{
+	cursor:pointer;
 }

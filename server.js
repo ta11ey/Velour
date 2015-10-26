@@ -28,12 +28,12 @@ app.use(cors());
 app.use(expressSesh({
 	secret: 'topSecret',
 	resave: false,
-	saveUnitialized: true
-// 	cookie: {
-//     path: '/',
-//     httpOnly: true,
-//     secure: false
-//   }
+	saveUnitialized: true,
+	cookie: {
+    path: '/',
+    httpOnly: true,
+    secure: false
+  }
 }))
 
 /******************** Load User Schema *******************/

@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 				.state('velour.redeem', {
 					url: '/about',
 					templateUrl: 'js/velour/templates/redeemTmp.html',
-					controller: 'aboutCtrl'
+					controller: 'redeemCtrl'
 				})
 				
 				.state('velour.contact', {

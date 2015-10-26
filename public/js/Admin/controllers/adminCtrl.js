@@ -113,15 +113,9 @@ angular.module('velourApp').controller('adminCtrl',function($scope, adminService
 		}
 		
 		$scope.addPost = function(data) {
-			// var data = {
-			// 	"title": 	title,
-			// 	"subtitle": subtitle,
-			// 	"date": 	date,
-			// 	"post":		post
-			// };
-				
 			adminService.addPost(data).then(function(response) {
-				$scope.toggleUpdatePostView()
+				$scope.toggleUpdatePostView();
+				$scope.getPosts();
 				console.log('succesfully added to database!')
 			});
 		};
